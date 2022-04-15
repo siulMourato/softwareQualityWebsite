@@ -1,17 +1,17 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import FormBecomeHost from "../components/FormBecomeHost";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import FormBecomeHost from '../components/FormBecomeHost';
 
 function BecomeHost() {
   return (
     <div className="h-screen">
-      <Header/>
+      <Header />
       <main className="flex">
-        <FormBecomeHost/>
+        <FormBecomeHost />
       </main>
-      <Footer/>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default BecomeHost
+export default BecomeHost;

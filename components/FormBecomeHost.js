@@ -1,15 +1,16 @@
-import {Form, Formik, Field} from 'formik';
+import { Form, Formik, Field } from 'formik';
 import * as Yup from 'yup';
 
 function FormBecomeHost() {
-
   const BecomeAHostValidationSchema = Yup.object({
-    location: Yup.string().min(2, "Must be 2 character or more!").required("Required!")
-  })
+    location: Yup.string()
+      .min(2, 'Must be 2 character or more!')
+      .required('Required!'),
+  });
 
   const formikInitialValuesBecomeAHost = {
-    location: ''
-  }
+    location: '',
+  };
   //TODO: this is the data that should be submitted to API
   // {
   //   "img": "https://links.papareact.com/hz2",
@@ -24,22 +25,25 @@ function FormBecomeHost() {
   // }
   return (
     <div className="flex justify-center w-full my-12">
-      <Formik initialValues={formikInitialValuesBecomeAHost}
-              onSubmit={values => alert(JSON.stringify(values, null, 2))}
-              validationSchema={BecomeAHostValidationSchema}
+      <Formik
+        initialValues={formikInitialValuesBecomeAHost}
+        onSubmit={(values) => alert(JSON.stringify(values, null, 2))}
+        validationSchema={BecomeAHostValidationSchema}
       >
-        {(props => (
+        {(props) => (
           <Form>
             <div>
-              <Field id="location" name="location" placeholder="myLocation"/>
-              {props.errors.location && props.touched.location ? <div>{props.errors.location}</div> : null}
+              <Field id="location" name="location" placeholder="myLocation" />
+              {props.errors.location && props.touched.location ? (
+                <div>{props.errors.location}</div>
+              ) : null}
               <button type="submit">Submit</button>
             </div>
           </Form>
-        ))}
+        )}
       </Formik>
     </div>
-  )
+  );
 }
 
-export default FormBecomeHost
+export default FormBecomeHost;
