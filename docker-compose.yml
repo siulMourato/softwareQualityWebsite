@@ -1,0 +1,11 @@
+version: '3'
+services:
+  marketplace:
+    container_name: air-bnb
+    command: npm run dev
+    build:
+      context: .
+      target: development
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000

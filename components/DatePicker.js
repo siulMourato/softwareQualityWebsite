@@ -1,13 +1,7 @@
 function DatePicker() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return <div></div>;
 }
 
-export default DatePicker
-
+export default DatePicker;
 
 //Override date picker default styles
-
