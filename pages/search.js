@@ -72,9 +72,11 @@ export default Search;
 
 //context can be passed for dynamic rendering info
 export async function getServerSideProps() {
-  const searchResults = await fetch('https://links.papareact.com/isz').then(
-    (res) => res.json(),
-  );
+  //TODO: old endpoint
+  // https://links.papareact.com/isz
+  const searchResults = await fetch(
+    'https://us-central1-softwarequality-11c05.cloudfunctions.net/api/v',
+  ).then((res) => res.json());
 
   return {
     props: {
