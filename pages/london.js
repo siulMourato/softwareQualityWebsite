@@ -14,7 +14,7 @@ export async function getServerSideProps() {
     },
   };
 }
-//TODO: just a test
+//TODO: just a test 2
 function London({ searchResults }) {
   return (
     <div className="h-screen">
