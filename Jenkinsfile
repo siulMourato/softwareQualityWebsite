@@ -6,16 +6,14 @@ pipeline{
                 echo "staging"
       // One or more steps need to be included within the steps block.
       }
-
-        }
+     }
 
   stage('production')
   {
     steps {
-
-                echo "production"
+         echo "production"
       // One or more steps need to be included within the steps block.
-      }
-  }
     }
+  }
+  }
 }
