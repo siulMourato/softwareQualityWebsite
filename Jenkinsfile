@@ -22,9 +22,9 @@ pipeline {
                                     cleanRemote: false,
                                     excludes: 'node_modules/',
                                     execCommand: '''
-                                    cd cypress-example-kitchensink
+                                    npm build
                                     npm i
-                                    pm2 restart start''',
+                                    npm start''',
                                     execTimeout: 1200000,
                                     flatten: false,
                                     makeEmptyDirs: false,
@@ -46,7 +46,7 @@ pipeline {
                 sh 'npm i'
                 sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
                 sh 'rm -f mochawesome.json'
-                sh 'npx cypress run --config baseUrl="http://34.140.29.128" --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome'
+                sh 'npx cypress run --config baseUrl="http://34.163.103.107" --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome'
                 sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
                 sh 'npx marge mochawesome-report/mochawesome.json'
             }
