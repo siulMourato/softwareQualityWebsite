@@ -3,12 +3,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run"
   },
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
     "@heroicons/react": "^1.0.4",
     "@react-hook/media-query": "^1.1.1",
+    "cypress": "^9.6.1",
     "date-fns": "^2.23.0",
     "feather-icons": "^4.28.0",
     "firebase": "^9.6.10",
@@ -24,12 +27,17 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^7.3.2",
     "autoprefixer": "^10.2.6",
-    "eslint": "^8.13.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "eslint": "^8.15.0",
     "eslint-plugin-react": "^7.29.4",
     "postcss": "^8.3.5",
     "prettier": "2.6.2",
     "tailwindcss": "^2.2.4"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
   },
   "lint-staged": {
     "*.{js,jsx,tsx,ts}": [
