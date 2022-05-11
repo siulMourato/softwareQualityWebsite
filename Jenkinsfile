@@ -13,7 +13,6 @@ pipeline {
       stages {
         stage('Build/Deploy app to staging') {
             steps {
-                sshPublisher(
                     publishers: [
                         sshPublisherDesc(
                             configName: 'staging',
@@ -22,7 +21,7 @@ pipeline {
                                     cleanRemote: false,
                                     excludes: 'node_modules/',
                                     execCommand: '''
-                                    npm build
+                                    npm run build
                                     npm i
                                     npm start''',
                                     execTimeout: 1200000,
