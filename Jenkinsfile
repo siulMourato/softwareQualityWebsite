@@ -22,7 +22,6 @@ pipeline {
                                     cleanRemote: false,
                                     excludes: 'node_modules/',
                                     execCommand: '''
-                                    npm i
                                     npm start''',
                                     execTimeout: 1200000,
                                     flatten: false,
