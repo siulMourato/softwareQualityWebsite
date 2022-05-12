@@ -5,7 +5,7 @@ pipeline {
 
       parameters{
           string(name: 'SPEC', defaultValue:"cypress/integration/airbnbSearch.spec.js", description: "Enter the cypress script path that you want to execute")
-          choice(name: 'BROWSER', choices:['electron'], description: "Select the browser to be used in your cypress tests")
+          choice(name: 'BROWSER', choices:['chrome'], description: "Select the browser to be used in your cypress tests")
       }
 
       stages {
@@ -21,7 +21,7 @@ pipeline {
                                     excludes: 'node_modules/',
                                     execCommand: '''
                                     npm i
-                                    pm2 restart start''',
+                                    pm2 restart''',
                                     execTimeout: 1200000,
                                     flatten: false,
                                     makeEmptyDirs: false,
@@ -71,11 +71,6 @@ pipeline {
            }
         }
 
-        stage('Release to production') {
-            steps {
-            // similar procedure as in the 'Build/ Deploy to staging' stage, suppressed here for cost saving purposes
-                echo "Deploying app in production environment"
-           }
-        }
+       
     }
 }
