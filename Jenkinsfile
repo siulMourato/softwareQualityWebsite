@@ -42,26 +42,26 @@ pipeline {
                 sh 'npm prune'
                 sh 'npm cache clean --force'
                 sh 'npm i'
-                sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
-                sh 'rm -f mochawesome.json'
-                sh 'npm run cypress --config baseUrl="http://34.163.103.107:3000" --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome'
-   
+//                 sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
+//                 sh 'rm -f mochawesome.json'
+                sh 'npm run cypress baseUrl="http://34.163.103.107:3000"'
+
             }
-            post {
-                success {
-                    publishHTML (
-                        target : [
-                            allowMissgiing: false,
-                            alwaysLinkToLastBuild: true,
-                            keepAll: true,
-                            reportDir: 'mochawesome-report',
-                            reportFiles: 'mochawesome.html',
-                            reportName: 'My Reports',
-                            reportTitles: 'The Report'
-                        ]
-                    )
-                }
-            }
+//             post {
+//                 success {
+//                     publishHTML (
+//                         target : [
+//                             allowMissgiing: false,
+//                             alwaysLinkToLastBuild: true,
+//                             keepAll: true,
+//                             reportDir: 'mochawesome-report',
+//                             reportFiles: 'mochawesome.html',
+//                             reportName: 'My Reports',
+//                             reportTitles: 'The Report'
+//                         ]
+//                     )
+//                 }
+//             }
         }
 
         stage('Perform manual testing...'){

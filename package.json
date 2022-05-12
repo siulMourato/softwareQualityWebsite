@@ -4,7 +4,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "cypress": "cypress run"
+    "cypress": "cypress run --config video=false"
   },
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
