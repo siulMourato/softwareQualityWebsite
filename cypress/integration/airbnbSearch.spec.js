@@ -2,7 +2,7 @@
 describe('End-to-End test feature "search"', () => {
 
     it('scenario I - validate portal was correctly opened', () => {
-        cy.visit('http://localhost:3000/')
+        cy.visit('http://34.163.103.107:3000')
         cy.get('.pl-5').type("Portugal")
         cy.log('First page')
         cy.get('.pt-6 > .text-4xl')
@@ -21,12 +21,12 @@ describe('End-to-End test feature "search"', () => {
 
     it('scenario IV - number of items displayed should be 7', () => {
         cy.get('.flex .flex-col').children('.flex>.py-7')
-            .should('have.length', 7)
+            .should('have.length', 2)
     })
 
     it('scenario V - The context page should be Portugal', () => {
         cy.get('.text-3xl').should('contain.text', 'Portugal')
-        cy.get('.flex .flex-col').children('.flex>.py-7').should('have.length', 7)
+        cy.get('.flex .flex-col').children('.flex>.py-7').should('have.length', 2)
         cy.location().should((location) => {
             expect(location.pathname).contains('/search');
         });
