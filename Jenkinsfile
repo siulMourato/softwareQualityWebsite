@@ -44,7 +44,7 @@ pipeline {
                 sh 'npm i'
                 sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
                 sh 'rm -f mochawesome.json'
-                sh 'npm run cypress:headless --config video=false baseUrl="http://34.163.103.107:3000" --browser ${BROWSER} --spec ${SPEC}'
+                sh 'npm run cypress:headless --config baseUrl="http://34.163.103.107:3000" --browser ${BROWSER} --spec ${SPEC}'
             }
             post {
                 success {
