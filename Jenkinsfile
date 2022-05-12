@@ -21,7 +21,7 @@ pipeline {
                                     excludes: 'node_modules/',
                                     execCommand: '''
                                     npm i
-                                    pm2 restart''',
+                                    pm2 restart npm''',
                                     execTimeout: 1200000,
                                     flatten: false,
                                     makeEmptyDirs: false,
