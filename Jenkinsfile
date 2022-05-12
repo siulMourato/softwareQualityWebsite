@@ -42,10 +42,9 @@ pipeline {
                 sh 'npm prune'
                 sh 'npm cache clean --force'
                 sh 'npm i'
-//                 sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
-//                 sh 'rm -f mochawesome.json'
-                sh 'npm run cypress baseUrl="http://34.163.103.107:3000"'
-
+                sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
+                sh 'rm -f mochawesome.json'
+                sh 'npm run cypress'
             }
 //             post {
 //                 success {
@@ -55,7 +54,7 @@ pipeline {
 //                             alwaysLinkToLastBuild: true,
 //                             keepAll: true,
 //                             reportDir: 'mochawesome-report',
-//                             reportFiles: 'mochawesome.html',
+//                             reportFiles: 'mochawesome.json',
 //                             reportName: 'My Reports',
 //                             reportTitles: 'The Report'
 //                         ]

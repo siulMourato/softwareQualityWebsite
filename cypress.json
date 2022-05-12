@@ -1,3 +1,13 @@
 {
-  "testFiles": "**/*.{spec.js,feaeture,features}"
+  "testFiles": "**/*.{spec.js,feaeture,features}",
+  "reporter": "mochawesome",
+  "video": false,
+  "baseUrl": "http://34.163.103.107:3000",
+  "reporterOptions": {
+    "reportDir": "cypress/results",
+    "overwrite": true,
+    "html": true,
+    "json": true,
+    "video": false
+  }
 }
