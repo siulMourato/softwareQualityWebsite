@@ -53,7 +53,7 @@ pipeline {
                             allowMissing: false,
                             alwaysLinkToLastBuild: true,
                             keepAll: true,
-                            reportDir: 'cypress',
+                            reportDir: 'cypress/results',
                             reportFiles: 'mochawesome.html',
                             reportName: 'My Reports2',
                             reportTitles: 'The Report is true'
