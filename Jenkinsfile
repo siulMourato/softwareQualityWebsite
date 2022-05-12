@@ -9,7 +9,7 @@ pipeline {
       }
 
       stages {
-        stage('Build/Deploy app to staging') {
+       stage('Build/Deploy app to staging') {
             steps {
                 sshPublisher(
                     publishers: [
@@ -20,7 +20,9 @@ pipeline {
                                     cleanRemote: false,
                                     excludes: 'node_modules/',
                                     execCommand: '''
-                                    npm run start''',
+                                    cd cypress-example-kitchensink
+                                    npm i
+                                    pm2 restart start''',
                                     execTimeout: 1200000,
                                     flatten: false,
                                     makeEmptyDirs: false,
