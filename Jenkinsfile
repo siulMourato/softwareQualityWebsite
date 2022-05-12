@@ -46,21 +46,21 @@ pipeline {
                 sh 'rm -f mochawesome.json'
                 sh 'npm run cypress'
             }
-//             post {
-//                 success {
-//                     publishHTML (
-//                         target : [
-//                             allowMissgiing: false,
-//                             alwaysLinkToLastBuild: true,
-//                             keepAll: true,
-//                             reportDir: 'mochawesome-report',
-//                             reportFiles: 'mochawesome.json',
-//                             reportName: 'My Reports',
-//                             reportTitles: 'The Report'
-//                         ]
-//                     )
-//                 }
-//             }
+            post {
+                success {
+                    publishHTML (
+                        target : [
+                            allowMissgiing: false,
+                            alwaysLinkToLastBuild: true,
+                            keepAll: true,
+                            reportDir: 'mochawesome-report',
+                            reportFiles: 'mochawesome.json',
+                            reportName: 'My Reports',
+                            reportTitles: 'The Report'
+                        ]
+                    )
+                }
+            }
         }
 
         stage('Perform manual testing...'){
