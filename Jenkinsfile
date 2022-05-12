@@ -7,9 +7,7 @@ pipeline {
           string(name: 'SPEC', defaultValue:"cypress/integration/airbnbSearch.spec.js", description: "Enter the cypress script path that you want to execute")
           choice(name: 'BROWSER', choices:['electron'], description: "Select the browser to be used in your cypress tests")
       }
-      options {
-              ansiColor('xterm')
-      }
+
       stages {
        stage('Build/Deploy app to staging') {
             steps {
@@ -22,7 +20,6 @@ pipeline {
                                     cleanRemote: false,
                                     excludes: 'node_modules/',
                                     execCommand: '''
-                                    cd cypress-example-kitchensink
                                     npm i
                                     pm2 restart start''',
                                     execTimeout: 1200000,
