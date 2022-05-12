@@ -10,7 +10,7 @@ pipeline {
       options {
               ansiColor('xterm')
       }
-
+      }
       stages {
         stage('Build/Deploy app to staging') {
             steps {
