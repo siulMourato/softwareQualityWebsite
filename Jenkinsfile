@@ -40,7 +40,7 @@ pipeline {
             steps {
                 sh 'npm prune'
                 sh 'npm cache clean --force'
-                sh 'npm ci'
+                sh 'npm i'
                 sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
                 sh 'rm -f mochawesome.json'
                 sh 'npm run cypress:headless --config baseUrl="http://34.163.103.107:3000" --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome'
@@ -57,8 +57,9 @@ pipeline {
                             reportDir: 'mochawesome-report',
                             reportFiles: 'mochawesome.html',
                             reportName: 'My Reports',
-                            reportTitles: 'The Report'])
-
+                            reportTitles: 'The Report'
+                        ]
+                    )
                 }
             }
         }
@@ -71,6 +72,12 @@ pipeline {
            }
         }
 
-       
+       stage('Release to production') {
+           steps {
+
+           // similar procedure as in the 'Build/ Deploy to staging' stage, suppressed here for cost saving purposes
+               echo "Deploying app in production environment"
+          }
+       }
     }
 }
