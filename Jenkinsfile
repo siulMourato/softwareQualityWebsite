@@ -50,7 +50,7 @@ pipeline {
                 success {
                     publishHTML (
                         target : [
-                            allowMissgiing: false,
+                            allowMissing: false,
                             alwaysLinkToLastBuild: true,
                             keepAll: true,
                             reportDir: 'mochawesome-report',
