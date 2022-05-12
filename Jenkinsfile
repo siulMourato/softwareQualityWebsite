@@ -40,7 +40,7 @@ pipeline {
             steps {
                 sh 'npm prune'
                 sh 'npm cache clean --force'
-                sh 'npm i'
+                sh 'npm ci'
                 sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
                 sh 'rm -f mochawesome.json'
                 sh 'npm run cypress:headless --config baseUrl="http://34.163.103.107:3000" --browser ${BROWSER} --spec ${SPEC} --reporter mochawesome'
