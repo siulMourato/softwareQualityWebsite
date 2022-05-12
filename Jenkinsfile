@@ -36,6 +36,7 @@ pipeline {
                         verbose: true)])
             }
         }
+
         stage('Run automated tests'){
             steps {
                 sh 'npm prune'
