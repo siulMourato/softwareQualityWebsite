@@ -52,11 +52,11 @@ pipeline {
                         target : [
                             allowMissing: false,
                             alwaysLinkToLastBuild: true,
-                            keepAll: true,
+                            keepAll: false,
                             reportDir: 'reports',
                             reportFiles: 'mochawesome.html',
-                            reportName: 'My Reports',
-                            reportTitles: 'The Report'
+                            reportName: 'MyReportsTeste',
+                            reportTitles: 'TheReport'
                         ]
                     )
                 }
