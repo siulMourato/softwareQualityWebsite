@@ -1,3 +1,5 @@
 {
-  "testFiles": "**/*.{spec.js,feaeture,features}"
+  "testFiles": "**/*.{spec.js,feaeture,features}",
+  "videoRecording": false,
+  "trashAssetsBeforeRuns": true
 }
