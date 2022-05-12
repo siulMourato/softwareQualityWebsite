@@ -57,8 +57,9 @@ pipeline {
                             reportDir: 'mochawesome-report',
                             reportFiles: 'mochawesome.html',
                             reportName: 'My Reports',
-                            reportTitles: 'The Report'])
-
+                            reportTitles: 'The Report'
+                        ]
+                    )
                 }
             }
         }
@@ -71,11 +72,12 @@ pipeline {
            }
         }
 
-        stage('Release to production') {
-            steps {
-            // similar procedure as in the 'Build/ Deploy to staging' stage, suppressed here for cost saving purposes
-                echo "Deploying app in production environment"
-           }
-        }
+       stage('Release to production') {
+           steps {
+
+           // similar procedure as in the 'Build/ Deploy to staging' stage, suppressed here for cost saving purposes
+               echo "Deploying app in production environment"
+          }
+       }
     }
 }
