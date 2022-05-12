@@ -53,10 +53,10 @@ pipeline {
                             allowMissing: false,
                             alwaysLinkToLastBuild: true,
                             keepAll: true,
-                            reportDir: 'mochawesome-report',
+                            reportDir: 'cypress',
                             reportFiles: 'mochawesome.html',
-                            reportName: 'My Reports',
-                            reportTitles: 'The Report'
+                            reportName: 'My Reports2',
+                            reportTitles: 'The Report is true'
                         ]
                     )
                 }
