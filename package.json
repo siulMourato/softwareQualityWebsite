@@ -5,7 +5,7 @@
     "build": "next build",
     "start": "next start",
     "cypress": "cypress open",
-    "cypress:headless": "cypress run --config video=false"
+    "cypress:headless": "cypress run --config video=false --disable-gpu"
   },
   "dependencies": {
     "@badrap/bar-of-progress": "^0.1.2",
