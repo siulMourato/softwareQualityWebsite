@@ -1,3 +1,11 @@
 {
-  "testFiles": "**/*.{spec.js,feaeture,features}"
+  "testFiles": "**/*.{spec.js,feaeture,features}",
+  "baseUrl": "",
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results",
+    "overwrite": true,
+    "html": false,
+    "json": true
+  }
 }
