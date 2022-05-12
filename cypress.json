@@ -1,3 +1,6 @@
 {
-  "testFiles": "**/*.{spec.js,feaeture,features}"
+  "testFiles": "**/*.{spec.js,feaeture,features}",
+  "videoUploadOnPasses":false,
+  "video":false
+
 }
