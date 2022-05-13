@@ -42,11 +42,11 @@ pipeline {
                 sh 'npm prune'
                 sh 'npm cache clean --force'
                 sh 'npm i'
-                sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
-                sh 'rm -f mochawesome.json'
+//                 sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
+//                 sh 'rm -f mochawesome.json'
                 sh 'npm run cypress'
-                sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
-                sh 'npx marge mochawesome-report/mochawesome.json'
+//                 sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
+//                 sh 'npx marge mochawesome-report/mochawesome.json'
             }
 //             post {
 //                 success {
