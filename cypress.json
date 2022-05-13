@@ -1,5 +1,4 @@
 {
-  "chromeWebSecurity":false,
   "testFiles": "**/*.{spec.js,feaeture,features}",
   "reporter": "mochawesome",
   "video": false,
