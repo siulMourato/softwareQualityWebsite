@@ -46,7 +46,7 @@ pipeline {
                 sh 'rm -f mochawesome-report/mochawesome.json'
                 sh 'npm run cypress'
                 sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
-                sh 'npx marge mochawesome-report/mochawesome.json'
+                sh 'npx marge mochawesome-report/mochawesome.json --reportDir ./ --inline'
             }
 
 
