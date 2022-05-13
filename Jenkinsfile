@@ -48,13 +48,13 @@ pipeline {
             }
             post {
                 success {
-                    publishHTML (
+                    git (
                         target : [
                             allowMissing: false,
                             alwaysLinkToLastBuild: true,
-                            keepAll: false,
+                            keepAll: true,
                             reportDir: 'reports',
-                            reportFiles: 'mochawesome.html',
+                            reportFiles: 'mochawesome.json',
                             reportName: 'MyReportsTeste',
                             reportTitles: 'TheReport'
                         ]
