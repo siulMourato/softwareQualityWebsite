@@ -4,7 +4,7 @@ pipeline {
       tools {nodejs "airbnb"}
 
       parameters{
-          string(name: 'SPEC', defaultValue:"cypress/integration/airbnbSearch.spec.js", description: "Enter the cypress script path that you want to execute")
+          string(name: 'SPEC', defaultValue:"**/*.{spec.js,feaeture,features}", description: "Enter the cypress script path that you want to execute")
           choice(name: 'BROWSER', choices:['electron'], description: "Select the browser to be used in your cypress tests")
       }
 
