@@ -48,20 +48,20 @@ pipeline {
                 sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
                 sh 'npx marge mochawesome-report/mochawesome.json'
             }
-            post {
-                success {
-                    publishHTML (
-                        target : [
-                            allowMissing: false,
-                            alwaysLinkToLastBuild: true,
-                            keepAll: true,
-                            reportDir: 'mochawesome-report',
-                            reportFiles: 'mochawesome.html',
-                            reportName: 'My Reports',
-                            reportTitles: 'The Report'])
-
-                }
-            }
+//             post {
+//                 success {
+//                     publishHTML (
+//                         target : [
+//                             allowMissing: false,
+//                             alwaysLinkToLastBuild: true,
+//                             keepAll: true,
+//                             reportDir: 'mochawesome-report',
+//                             reportFiles: 'mochawesome.html',
+//                             reportName: 'My Reports',
+//                             reportTitles: 'The Report'])
+//
+//                 }
+//             }
         }
 
 
