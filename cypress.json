@@ -8,7 +8,6 @@
     "overwrite": true,
     "html": false,
     "json": true,
-    "video": false,
-    "charts": true
+    "video": false
   }
 }
