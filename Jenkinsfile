@@ -52,7 +52,7 @@ pipeline {
 
             post {
                 success {
-                    git (
+                    publishHTML (
                         target : [
                             allowMissing: false,
                             alwaysLinkToLastBuild: true,
