@@ -10,6 +10,6 @@
     "json": true,
     "video": false,
     "chart": true,
-    "reportFilename": "[status]_[datetime]-[name]-report"
+    "reportFilename": "[name]-report"
   }
 }
