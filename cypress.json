@@ -1,5 +1,5 @@
 {
-  "testFiles": "**/*.{spec.js,feaeture,features}",
+  "testFiles": "**/*.{spec.js,feature,features}",
   "reporter": "mochawesome",
   "video": false,
   "baseUrl": "http://34.163.103.107:3000",
@@ -9,6 +9,7 @@
     "html": false,
     "json": true,
     "video": false,
-    "chart": true
+    "chart": true,
+    "reportFilename": "[status]_[datetime]-[name]-report"
   }
 }
