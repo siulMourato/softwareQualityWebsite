@@ -5,7 +5,7 @@
   "baseUrl": "http://34.163.103.107:3000",
   "reporterOptions": {
     "reportDir": "cypress/results",
-    "overwrite": false,
+    "overwrite": true,
     "html": false,
     "json": true,
     "video": false,
