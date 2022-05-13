@@ -45,8 +45,8 @@ pipeline {
                 sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
                 sh 'rm -f mochawesome-report/mochawesome.json'
                 sh 'npm run cypress'
-                sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
-                sh 'npx marge mochawesome-report/mochawesome.json -f report -o mochareports'
+                sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/*.json'
+                sh 'npx marge mochawesome-report/*.json -f report -o mochareports'
             }
 
 
