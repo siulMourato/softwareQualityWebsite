@@ -11,6 +11,7 @@ pipeline {
       stages {
        stage('Build/Deploy app to staging') {
             steps {
+
                 sshPublisher(
                     publishers: [
                         sshPublisherDesc(
