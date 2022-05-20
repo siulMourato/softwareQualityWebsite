@@ -1,5 +1,5 @@
 Given(/^I open the application$/, () => {
-    cy.visit('https://example.cypress.io/todo')
+    cy.visit('http://35.228.39.139/')
 });
  
 Given(/^access to the landing page$/, () => {
