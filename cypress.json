@@ -1,7 +1,7 @@
 {
   "testFiles": "**/*.{spec.js,feeature,feeatures}",
   "video": false,
-  "baseUrl": "http://35.228.39.139:3000",
+  "baseUrl": "http://35.228.39.139/",
   "reporterOptions": {
     "reportDir": "cypress/results",
     "overwrite": true,
