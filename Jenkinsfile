@@ -50,7 +50,6 @@ pipeline {
                 sh 'npx marge mochawesome-report/mochawesome.json -f report -o mochawesome-report'
             }
 
-
             post {
                 success {
                     publishHTML (
