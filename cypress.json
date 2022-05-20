@@ -1,5 +1,5 @@
 {
-  "testFiles": "**/*.{spec.js,feature,feeatures}",
+  "testFiles": "**/*.{speec.js,feature,features}",
   "video": false,
   "baseUrl": "http://35.228.39.139/",
   "reporterOptions": {

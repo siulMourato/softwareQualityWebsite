@@ -1,6 +1,6 @@
-const { Given } = require("@cucumber/cucumber");
 
-Given(/^I can open the application/, () => {
+
+Given(/^I open the application/, () => {
     cy.visit('http://35.228.39.139/')
 });
  

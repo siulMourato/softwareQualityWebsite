@@ -1,3 +1,4 @@
+
 Given(/^I open the application$/, () => {
     cy.visit('http://35.228.39.139/')
 });
