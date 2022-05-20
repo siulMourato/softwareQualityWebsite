@@ -1,5 +1,5 @@
 {
-  "testFiles": "**/*.{spec.js,feeature,feeatures}",
+  "testFiles": "**/*.{spec.js,feature,feeatures}",
   "video": false,
   "baseUrl": "http://35.228.39.139/",
   "reporterOptions": {
