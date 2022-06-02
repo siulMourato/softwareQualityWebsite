@@ -1,0 +1,34 @@
+{
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 300,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 218.76666666666665,
+    "medianResTime" : 217.0,
+    "minResTime" : 210.0,
+    "maxResTime" : 264.0,
+    "pct1ResTime" : 224.0,
+    "pct2ResTime" : 227.0,
+    "pct3ResTime" : 260.0,
+    "throughput" : 57.80346820809248,
+    "receivedKBytesPerSec" : 1963.4551119942196,
+    "sentKBytesPerSec" : 6.660946531791907
+  },
+  "Access to landing page" : {
+    "transaction" : "Access to landing page",
+    "sampleCount" : 300,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 218.76666666666665,
+    "medianResTime" : 217.0,
+    "minResTime" : 210.0,
+    "maxResTime" : 264.0,
+    "pct1ResTime" : 224.0,
+    "pct2ResTime" : 227.0,
+    "pct3ResTime" : 260.0,
+    "throughput" : 57.80346820809248,
+    "receivedKBytesPerSec" : 1963.4551119942196,
+    "sentKBytesPerSec" : 6.660946531791907
+  }
+}
