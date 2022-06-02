@@ -68,15 +68,12 @@ pipeline {
                         }
                     }
                 stage('Static Analysis') {
-                    script {
-                        def scannerHome = tool 'SonarScanner 4.0';
+                       def scannerHome = tool 'SonarScanner 4.0';
                         withSonarQubeEnv('My SonarQube Server') 
                             sh "${scannerHome}/bin/sonar-scanner"
-                        }
                     }
                 }
             }
-        
         stage('Perform manual testing...'){
             steps {
                 timeout(activity: true, time: 5) {
