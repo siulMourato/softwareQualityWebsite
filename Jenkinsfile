@@ -68,8 +68,10 @@ pipeline {
                         }
                     }
                     stage('Static Analysis'){
-                            def scannerHome = tool 'My SonarQube Server';
-                            sh "${scannerHome}/bin/sonar-scanner" 
+                        environment{ scannerHome = tool 'My SonarQube Server'; }
+                        Steps{
+                                sh "${scannerHome}/bin/sonar-scanner"
+                            }
                     }
                 }
             }
