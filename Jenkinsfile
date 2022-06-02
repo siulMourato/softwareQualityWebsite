@@ -74,7 +74,7 @@ pipeline {
                     }
                 }
             }
-        }
+        
         stage('Perform manual testing...'){
             steps {
                 timeout(activity: true, time: 5) {
