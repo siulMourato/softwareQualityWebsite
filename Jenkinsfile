@@ -67,6 +67,7 @@ pipeline {
                             }
                         }
                     }
+                    
                     stage('Static Analysis'){
                         environment{ scannerHome = tool 'My SonarQube Server'; }
                         steps{
