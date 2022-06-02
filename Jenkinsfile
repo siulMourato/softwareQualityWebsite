@@ -71,7 +71,7 @@ pipeline {
                     stage('Static Analysis'){
                         environment{ scannerHome = tool 'Sonar-scanner'; }
                         steps{
-                            withSonarCubeEnv('sonarQube')
+                            withSonarQubeEnv('sonarQube')
                                 sh "${scannerHome}/bin/sonar-scanner"
                             }
                     }
