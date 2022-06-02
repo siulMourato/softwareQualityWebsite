@@ -4,8 +4,7 @@ Given(/^I open the application$/, () => {
 });
  
 Given(/^access to the landing page$/, () => {
-    cy.get('h1')
-            .contains('todos')
+    cy.get('h1').contains('todos')
     
     cy.get('.todo-list li').should('have.length', 2)
 });
