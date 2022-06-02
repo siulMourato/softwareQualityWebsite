@@ -38,35 +38,45 @@ pipeline {
             }
         }
 
-        stage('Run automated tests'){
-            steps {
-                sh 'npm prune'
-                sh 'npm cache clean --force'
-                sh 'npm i'
-                sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
-                sh 'rm -f mochawesome-report/mochawesome.json'
-                sh 'npm run cypress'
-                sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
-                sh 'npx marge mochawesome-report/mochawesome.json -f report -o mochawesome-report'
-            }
+        stages {
+            stage('Run Tests') {
+                parallel {
+                        stage('Run automated tests'){
+                            steps {
+                                sh 'npm prune'
+                                sh 'npm cache clean --force'
+                                sh 'npm i'
+                                sh 'npm install --save-dev mochawesome mochawesome-merge mochawesome-report-generator'
+                                sh 'rm -f mochawesome-report/mochawesome.json'
+                                sh 'npm run cypress'
+                                sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
+                                sh 'npx marge mochawesome-report/mochawesome.json -f report -o mochawesome-report'
+                            }
 
-            post {
-                success {
-                    publishHTML (
-                        target : [
-                            allowMissing: true,
-                            alwaysLinkToLastBuild: true,
-                            keepAll: true,
-                            reportDir: 'mochawesome-report',
-                            reportFiles: 'report.html',
-                            reportName: 'My Reports',
-                            reportTitles: 'The Report'])
+                            post {
+                                success {
+                                    publishHTML (
+                                        target : [
+                                            allowMissing: true,
+                                            alwaysLinkToLastBuild: true,
+                                            keepAll: true,
+                                            reportDir: 'mochawesome-report',
+                                            reportFiles: 'report.html',
+                                            reportName: 'My Reports',
+                                            reportTitles: 'The Report'])
 
+                                }
+                            }
+                        }
+                    stage('Static Analysis') {
+                        def scannerHome = tool 'SonarScanner 4.0';
+                            withSonarQubeEnv('My SonarQube Server') 
+                        sh "${scannerHome}/bin/sonar-scanner"
+                        }
+                    }
                 }
             }
         }
-
-
         stage('Perform manual testing...'){
             steps {
                 timeout(activity: true, time: 5) {
