@@ -36,7 +36,6 @@ pipeline {
                         verbose: true)])
             }
         }
-
         stage('Run Tests') {
             parallel {
                 stage('Run automated tests'){
