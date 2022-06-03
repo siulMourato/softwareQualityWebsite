@@ -25,6 +25,6 @@ describe('End-to-End test feature "explore nearby"', () => {
 
   it('scenario V - for each item list should be located in london', () => {
     cy.get('.flex .flex-col').children('.flex>.py-7').should('contains.text','London')
-    .should('have.length', 2)
+    .should('have.length', 7)
   })
 })
