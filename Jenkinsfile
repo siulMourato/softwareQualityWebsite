@@ -4,7 +4,7 @@ pipeline {
       tools {nodejs "airbnb"}
 
       parameters{
-          string(name: 'SPEC', defaultValue:"**/*.{spec.js,feaeture,features}", description: "Enter the cypress script path that you want to execute")
+          string(name: 'SPEC', defaultValue:"**/*.{spec.js,feature,features}", description: "Enter the cypress script path that you want to execute")
           choice(name: 'BROWSER', choices:['electron'], description: "Select the browser to be used in your cypress tests")
       }
 
@@ -21,7 +21,7 @@ pipeline {
                                     excludes: 'node_modules/',
                                     execCommand: '''
                                     npm i
-                                    pm2 restart npm''',
+                                    pm2 restart npm all''',
                                     execTimeout: 1200000,
                                     flatten: false,
                                     makeEmptyDirs: false,
@@ -36,6 +36,7 @@ pipeline {
                         verbose: true)])
             }
         }
+
         stage('Run Tests') {
             parallel {
                 stage('Run automated tests'){
