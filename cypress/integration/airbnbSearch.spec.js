@@ -26,7 +26,7 @@ describe('End-to-End test feature "search"', () => {
 
     it('scenario V - The context page should be Portugal', () => {
         cy.get('.text-3xl').should('contain.text', 'Portugal')
-        cy.get('.flex .flex-col').children('.flex>.py-7').should('have.length', 2)
+        cy.get('.flex .flex-col').children('.flex>.py-7').should('have.length', 7)
         cy.location().should((location) => {
             expect(location.pathname).contains('/search');
         });
