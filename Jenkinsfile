@@ -21,7 +21,7 @@ pipeline {
                                     excludes: 'node_modules/',
                                     execCommand: '''
                                     npm i
-                                    pm2 restart npm all''',
+                                    pm2 restart npm''',
                                     execTimeout: 1200000,
                                     flatten: false,
                                     makeEmptyDirs: false,
@@ -36,6 +36,7 @@ pipeline {
                         verbose: true)])
             }
         }
+        
         stage('Run Tests') {
             parallel {
                 stage('Run automated tests'){
