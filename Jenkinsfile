@@ -68,12 +68,15 @@ pipeline {
                         }
                     }
 
-                    stage('Static Analysis'){
-                        environment{ scannerHome = tool 'Sonar-scanner'; }
+                    stage('Static Analysis') {
+                        environment{ 
+                            SCANNER_HOME = tool 'Sonar-scanner'; 
+                        }
                         steps{
-                            withSonarQubeEnv('sonarQube')
-                                sh "${scannerHome}/bin/sonar-scanner"
+                            withSonarQubeEnv('sonarQube'){
+                                sh "${SCANNER_HOME}/bin/sonar-scanner"
                             }
+                        }
                     }
                 }
             }
