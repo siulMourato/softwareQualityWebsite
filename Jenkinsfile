@@ -63,7 +63,6 @@ pipeline {
                                         reportFiles: 'report.html',
                                         reportName: 'My Reports',
                                         reportTitles: 'The Report'])
-
                             }
                         }
                     }
@@ -80,6 +79,7 @@ pipeline {
                     }
                 }
             }
+            
         stage('Perform manual testing...'){
             steps {
                 timeout(activity: true, time: 5) {
