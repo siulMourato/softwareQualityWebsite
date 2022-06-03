@@ -21,7 +21,7 @@ describe('End-to-End test feature "search"', () => {
 
     it('scenario IV - number of items displayed should be 7', () => {
         cy.get('.flex .flex-col').children('.flex>.py-7')
-            .should('have.length', 2)
+            .should('have.length', 7)
     })
 
     it('scenario V - The context page should be Portugal', () => {
