@@ -11,7 +11,6 @@ pipeline {
       stages {
        stage('Build/Deploy app to staging') {
             steps {
-
                 sshPublisher(
                     publishers: [
                         sshPublisherDesc(
@@ -22,7 +21,7 @@ pipeline {
                                     excludes: 'node_modules/',
                                     execCommand: '''
                                     npm i
-                                    pm2 restart npm''',
+                                    pm2 restart npm all''',
                                     execTimeout: 1200000,
                                     flatten: false,
                                     makeEmptyDirs: false,
@@ -80,7 +79,7 @@ pipeline {
                 }
             }
 
-            
+
         stage('Perform manual testing...'){
             steps {
                 timeout(activity: true, time: 5) {
