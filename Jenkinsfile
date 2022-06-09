@@ -24,6 +24,7 @@ pipeline {
                                                             execCommand: '''
                                                             cd ../../airbnb/
                                                             npm i
+                                                            npm run build
                                                             pm2 restart npm all''',
                                                             execTimeout: 1200000,
                                                             flatten: false,
