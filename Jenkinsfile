@@ -22,6 +22,7 @@ pipeline {
                                                             cleanRemote: false,
                                                             excludes: 'node_modules/',
                                                             execCommand: '''
+                                                            cd ../../airbnb/
                                                             npm i
                                                             pm2 restart npm all''',
                                                             execTimeout: 1200000,
