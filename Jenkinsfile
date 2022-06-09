@@ -39,14 +39,14 @@ pipeline {
                                     }
                                }
 
-                            //    stage('Performance') {
-                                    // agent {
-                                        // label "jmeter"
-                                    // }
-                                //    steps {
-                                    // sh "${SCANNER_HOME}/bin/jmeter"
-                                //    }
-                            //    }
+                               stage('Performance') {
+                                    agent {
+                                        label "jmeter"
+                                    }
+                                   steps {
+                                    sh "~/apache-jmeter-5.4.3/bin/jmeter -n -t /var/lib/jenkins/workspace/airbnb/jmeter/testCase.jmx"
+                                   }
+                               }
                             }
             }
 
