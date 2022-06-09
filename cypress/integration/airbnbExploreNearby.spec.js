@@ -14,7 +14,7 @@ describe('End-to-End test feature "explore nearby"', () => {
 
   it('scenario III - validate if london is in URL', () =>{
     cy.location().should((location) => {
-      expect(location.pathname).contains('/london');
+      expect(location.pathname).contains('london');
     });
   })
 
