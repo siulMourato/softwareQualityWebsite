@@ -29,7 +29,7 @@ pipeline {
                                                             makeEmptyDirs: false,
                                                             noDefaultExcludes: false,
                                                             patternSeparator: '[, ]+',
-                                                            remoteDirectory: '/airbnb',
+                                                            remoteDirectory: '../../airbnb',
                                                             remoteDirectorySDF: false,
                                                             removePrefix: '',
                                                             sourceFiles: '**/*')],
@@ -38,8 +38,8 @@ pipeline {
                                                 verbose: true)])
                                     }
                                }
-
                                stage('Performance') {
+                                    //    triggers { cron('0 15 * * 1') }
                                    steps {
                                     sh "/home/luiscmsousa/apache-jmeter-5.4.3/bin/jmeter -n -t /var/lib/jenkins/workspace/airbnb/jmeter/testCase.jmx"
                                    }
