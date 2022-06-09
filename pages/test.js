@@ -19,7 +19,9 @@ function Test({ searchResults }) {
   return (
     <div className="h-screen">
       <Header />
-      <main className="flex"></main>
+      <main className="flex">
+        <h1>Sou eu a passar no buid!!!</h1>
+      </main>
       <Footer />
     </div>
   );
