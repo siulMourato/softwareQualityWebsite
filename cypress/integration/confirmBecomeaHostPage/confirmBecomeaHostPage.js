@@ -1,7 +1,7 @@
 const { Given } = require("@cucumber/cucumber");
 
 Given(/^I can open the application/, () => {
-    cy.visit('http://35.228.39.139/')
+    cy.visit('http://35.192.209.229/')
 });
  
 Given(/^access to the landing page$/, () => {

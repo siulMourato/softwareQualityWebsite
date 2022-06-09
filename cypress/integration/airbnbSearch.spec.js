@@ -2,7 +2,7 @@
 describe('End-to-End test feature "search"', () => {
 
     it('scenario I - validate portal was correctly opened', () => {
-        cy.visit('http://35.228.39.139/')
+        cy.visit('http://35.192.209.229/')
         cy.get('.pl-5').type("Portugal")
         cy.log('First page')
         cy.get('.pt-6 > .text-4xl')

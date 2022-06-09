@@ -39,14 +39,14 @@ pipeline {
                                     }
                                }
 
-                               stage('Performance') {
-                                    agent {
-                                        label "jmeter"
-                                    }
-                                   steps {
-                                    sh "${SCANNER_HOME}/bin/jmeter"
-                                   }
-                               }
+                            //    stage('Performance') {
+                                    // agent {
+                                        // label "jmeter"
+                                    // }
+                                //    steps {
+                                    // sh "${SCANNER_HOME}/bin/jmeter"
+                                //    }
+                            //    }
                             }
             }
 
