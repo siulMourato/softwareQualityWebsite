@@ -8,41 +8,45 @@ pipeline {
           choice(name: 'BROWSER', choices:['electron'], description: "Select the browser to be used in your cypress tests")
       }
       stages {
-       stage('Build/Deploy app to staging') {
-              parallel{
+            parallel {
+                stage('Build/Deploy app to staging') {
                     steps {
-                       sshPublisher(
-                           publishers: [
-                               sshPublisherDesc(
-                                   configName: 'staging',
-                                   transfers: [
-                                       sshTransfer(
-                                           cleanRemote: false,
-                                           excludes: 'node_modules/',
-                                           execCommand: '''
-                                           npm i
-                                           pm2 restart npm all''',
-                                           execTimeout: 1200000,
-                                           flatten: false,
-                                           makeEmptyDirs: false,
-                                           noDefaultExcludes: false,
-                                           patternSeparator: '[, ]+',
-                                           remoteDirectory: '',
-                                           remoteDirectorySDF: false,
-                                           removePrefix: '',
-                                           sourceFiles: '**/*')],
-                               usePromotionTimestamp: false,
-                               useWorkspaceInPromotion: false,
-                               verbose: true)])
-                   }
-
-                stage('Performance') {
-                    steps {
-                        sh "${SCANNER_HOME}/bin/jmeter"
+                        sshPublisher(
+                            publishers: [
+                                sshPublisherDesc(
+                                    configName: 'staging',
+                                    transfers: [
+                                        sshTransfer(
+                                            cleanRemote: false,
+                                            excludes: 'node_modules/',
+                                            execCommand: '''
+                                            npm i
+                                            pm2 restart npm all''',
+                                            execTimeout: 1200000,
+                                            flatten: false,
+                                            makeEmptyDirs: false,
+                                            noDefaultExcludes: false,
+                                            patternSeparator: '[, ]+',
+                                            remoteDirectory: '',
+                                            remoteDirectorySDF: false,
+                                            removePrefix: '',
+                                            sourceFiles: '**/*')],
+                                usePromotionTimestamp: false,
+                                useWorkspaceInPromotion: false,
+                                verbose: true)])
                     }
-                 }
-              }
-      }
+               }
+
+               stage('Performance') {
+                    agent {
+                        label "jmeter"
+                    }
+                   steps {
+                    sh "${SCANNER_HOME}/bin/jmeter"
+                   }
+               }
+            }
+
 
         stage('Run Tests') {
             parallel {
