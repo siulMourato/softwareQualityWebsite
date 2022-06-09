@@ -41,7 +41,7 @@ pipeline {
 
                                stage('Performance') {
                                    steps {
-                                    sh "~/apache-jmeter-5.4.3/bin/jmeter -n -t /var/lib/jenkins/workspace/airbnb/jmeter/testCase.jmx"
+                                    sh "../../../apache-jmeter-5.4.3/bin/jmeter -n -t /var/lib/jenkins/workspace/airbnb/jmeter/testCase.jmx"
                                    }
                                }
                             }
