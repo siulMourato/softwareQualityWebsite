@@ -91,20 +91,21 @@ pipeline {
             }
 
 
-        stage('Perform manual testing...'){
-            steps {
-                timeout(activity: true, time: 5) {
-                    input 'Proceed to production?'
-                }
+            stage('Perform manual testing...'){
+                steps {
+                    timeout(activity: true, time: 5) {
+                        input 'Proceed to production?'
+                    }
+               }
+            }
+
+           stage('Release to production') {
+               steps {
+
+               // similar procedure as in the 'Build/ Deploy to staging' stage, suppressed here for cost saving purposes
+                   echo "Deploying app in production environment"
+              }
            }
         }
-
-       stage('Release to production') {
-           steps {
-
-           // similar procedure as in the 'Build/ Deploy to staging' stage, suppressed here for cost saving purposes
-               echo "Deploying app in production environment"
-          }
-       }
-    }
+}
 }
