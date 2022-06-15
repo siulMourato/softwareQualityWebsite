@@ -11,7 +11,6 @@ pipeline {
 
             stage('Deploy and performance'){
                 parallel {
-                    
                                 stage('Build/Deploy app to staging') {
                                     steps {
                                         sshPublisher(
