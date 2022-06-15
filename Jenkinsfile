@@ -46,6 +46,12 @@ pipeline {
                                    steps {
                                     sh "/home/luiscmsousa/apache-jmeter-5.4.3/bin/jmeter -j jmeter.save.saveservice.output_format=xml -n -t /var/lib/jenkins/workspace/airbnb/jmeter/testCase.jmx -l /var/lib/jenkins/workspace/airbnb/jenkins.io.report.jtl"
                                    }
+
+                                   post {  
+                                        allways{
+                                            perfReport '/var/lib/jenkins/workspace/airbnb/*.jtl'}
+                                         }
+                                    }
                                }
                             }
             }
