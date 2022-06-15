@@ -18,6 +18,7 @@ describe('End-to-End test feature "explore nearby"', () => {
     });
   })
 
+  /*
   it('scenario IV - validate if list makes sense with filter applied previously', () => {
     cy.get('.text-3xl').should('contain.text','London')
     cy.get('.pt-14 > :nth-child(4) > :nth-child(1)').should('contain.text','London')
@@ -26,5 +27,5 @@ describe('End-to-End test feature "explore nearby"', () => {
   it('scenario V - for each item list should be located in london', () => {
     cy.get('.flex .flex-col').children('.flex>.py-7').should('contains.text','London')
     .should('have.length', 7)
-  })
+  })*/
 })

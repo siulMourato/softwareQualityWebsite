@@ -18,7 +18,7 @@ describe('End-to-End test feature "search"', () => {
         cy.get(':nth-child(3) > .text-red-400').click()
         cy.get('.text-3xl').should('have.text', 'Stays in Portugal')
     })
-
+/*
     it('scenario IV - number of items displayed should be 7', () => {
         cy.get('.flex .flex-col').children('.flex>.py-7')
             .should('have.length', 7)
@@ -31,7 +31,7 @@ describe('End-to-End test feature "search"', () => {
             expect(location.pathname).contains('/search');
         });
         cy.url().should('contain', '?location=Portugal')
-    })
+    })*/
 })
 
 
