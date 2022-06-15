@@ -1,6 +1,8 @@
 pipeline {
       agent any
 
+
+
       parameters{
           string(name: 'SPEC', defaultValue:"**/*.{spec.js,feature,features}", description: "Enter the cypress script path that you want to execute")
           choice(name: 'BROWSER', choices:['electron'], description: "Select the browser to be used in your cypress tests")
