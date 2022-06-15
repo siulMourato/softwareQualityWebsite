@@ -13,12 +13,12 @@ describe('End-to-End test feature "search"', () => {
         cy.get('.w-12').clear().type("0")
         cy.get('.rdrStaticRangeSelected > .rdrStaticRangeLabel').should('have.text', 'Today')
     })
-
+/*
     it('scenario III - button search shows list of houses to loan', () => {
         cy.get(':nth-child(3) > .text-red-400').click()
         cy.get('.text-3xl').should('have.text', 'Stays in Portugal')
     })
-/*
+
     it('scenario IV - number of items displayed should be 7', () => {
         cy.get('.flex .flex-col').children('.flex>.py-7')
             .should('have.length', 7)
