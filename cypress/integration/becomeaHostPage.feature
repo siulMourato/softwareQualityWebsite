@@ -1,9 +1,13 @@
-Feature: Become a host
+Feature: Become a host webpage
   As a user
   I want to become a host
   So that I can see survey with list of fields to be filled in and after submit to become a host
-  Scenario: Fill become a host webpage with correct values
-    Given I open the application
+  Scenario Outline: Fill become a host webpage with correct values
+    Given I can open the application
+    And access to the landing page
+
+  Scenario Outline: Fill become a host webpage with correct values
+    Given I can open the application
     And access to the landing page
     And I click on become a host option
     And I will see the become a host form
@@ -20,8 +24,13 @@ Feature: Become a host
     And I click "submit button"
     Then I can see that the success creation page
     
+    Examples: 
+      | Host Name  | Short Description Type               | Detailed Description             | Price per day    | Member Name | Member City           | Member ZipCode            | Number    | TaxNumber  |                      
+      | Host A     | This is a short description host a   | This is a detailed description   | 320              | Test User   | Leiria                | 1234-567                  | 18        | 123456789  |
+      | Host B     | This is a short description host b   | This is a detailed description   | 190              | Test User   | Lisboa                | 1234-567                  | 19        | 123456789  |
+      | Host C     | This is a short description host c   | This is a detailed description   | 200              | Test User   | Alcobaça              | 1234-567                  | 19        | 123456789  |
 
-  Scenario: Fill become a host webpage without correct values
+  Scenario Outline: Fill become a host webpage without correct values
     Given I can open the application
     And access to the landing page
     And I click on become a host option
@@ -38,3 +47,14 @@ Feature: Become a host
     And I fill <TaxNumber>
     And I click "submit button"
     When I can see the <Expected Error>
+
+    Examples: 
+    | Host Name  | Short Description Type               | Detailed Description                                       | Price per day    | Member Name | Member City           | Member ZipCode            | Number    | TaxNumber  | Expected Error                    | 
+    | Host A     | this is a short description host a   | this is a detailed description                             | 320              | Test User   | Leiria                |                           | 18        | 123456789  | required attribute memberzip code |
+    |            | this is host without name            | this is a detailed description for hostname without value  | 300              | Teste User  | Leiria                | 1234-123                  | 18        | 123456789  | required attribute host name      |
+    | Host B     | this is host without price per day   | this is a detailed description for hostname without value  |                  | Teste User  | Leiria                | 1234-123                  | 18        | 123456789  | required attribute price per day  |
+    | Host C     | this is host without price per day   | this is a detailed description for hostname without value  | 180              | Teste User  | Leiria                | 1234-123                  | 18        |            | required attribute TaxNumber      |
+    | Host D     | this is host without price per day   | this is a detailed description for hostname without value  | 180              | Teste User  |                       | 1234-123                  | 18        | 123456789  | required attribute member city    |
+
+
+##missing duplicated attributes

@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 describe('End-to-End test feature "explore nearby"', () => {
   it('scenario I - open portal', () => {
-      cy.visit('http://35.228.39.139/')
+      cy.visit('http://35.192.209.229/')
       cy.get('.pt-6 > .text-4xl')
         .should('have.text','Explore Nearby')    
     })
@@ -14,7 +14,7 @@ describe('End-to-End test feature "explore nearby"', () => {
 
   it('scenario III - validate if london is in URL', () =>{
     cy.location().should((location) => {
-      expect(location.pathname).contains('/london');
+      expect(location.pathname).contains('london');
     });
   })
 
@@ -25,6 +25,6 @@ describe('End-to-End test feature "explore nearby"', () => {
 
   it('scenario V - for each item list should be located in london', () => {
     cy.get('.flex .flex-col').children('.flex>.py-7').should('contains.text','London')
-    .should('have.length', 2)
+    .should('have.length', 7)
   })
 })

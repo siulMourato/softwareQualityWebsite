@@ -1,14 +1,12 @@
 
 
 Given(/^I open the application/, () => {
-    cy.visit('http://35.228.39.139/')
+    cy.visit('http://35.192.209.229/')
 });
  
 Given(/^access to the landing page$/, () => {
-    cy.get('h1')
-            .contains('todos')
-    
-    cy.get('.todo-list li').should('have.length', 2)
+    cy.get('h2')
+            .contains('Explore Nearby')
 });
 
 Given(/^I click on become a host option $/, () => {
@@ -17,13 +15,13 @@ Given(/^I click on become a host option $/, () => {
     cy.get('.todo-list li').should('have.length', 2)
 });
 
-Given(/^I enter following details $/, () => {
+Given(/^access to the landing page$/, () => {
     cy.get('h1')
             .contains('todos')
     cy.get('.todo-list li').should('have.length', 2)
 });
 
-When(/^I enter following details:$/, function (datatable) {
+When(/^search for houses$/, function (datatable) {
     var formVals = datatable.rowsHash();
     // formVals will be a object { "Name" : "Minium", "Home Page" : ... }
     for (var field in formVals) {
@@ -40,6 +38,12 @@ When(/^I enter following details:$/, function (datatable) {
     }
 });
  
+Given(/^I see a list off houses$/, () => {
+    cy.get('h1')
+            .contains('todos')
+    cy.get('.todo-list li').should('have.length', 2)
+});
+
 Given(/^I click "([^"]*)" $/, () => {
     cy.get('.new-todo')
         .type("\r")

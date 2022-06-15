@@ -1,11 +1,10 @@
 
 Given(/^I open the application$/, () => {
-    cy.visit('http://35.228.39.139/')
+    cy.visit('http://35.192.209.229/')
 });
  
 Given(/^access to the landing page$/, () => {
-    cy.get('h1')
-            .contains('todos')
+    cy.get('h1').contains('todos')
     
     cy.get('.todo-list li').should('have.length', 2)
 });
