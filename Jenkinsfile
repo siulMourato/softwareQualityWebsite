@@ -40,6 +40,7 @@ pipeline {
                                                 verbose: true)])
                                     }
                                }
+                               
                                stage('Performance') {
                                     //    triggers { cron('0 15 * * 1') }
                                    steps {
