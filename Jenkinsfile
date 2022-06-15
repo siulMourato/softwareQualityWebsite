@@ -11,6 +11,7 @@ pipeline {
 
             stage('Deploy and performance'){
                 parallel {
+                    
                                 stage('Build/Deploy app to staging') {
                                     steps {
                                         sshPublisher(
@@ -40,7 +41,7 @@ pipeline {
                                                 verbose: true)])
                                     }
                                }
-                               
+
                                stage('Performance') {
                                     //    triggers { cron('0 15 * * 1') }
                                    steps {
