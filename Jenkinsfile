@@ -1,7 +1,7 @@
 pipeline {
       agent any
 
-      tools {nodejs "airbnb"}
+
 
       parameters{
           string(name: 'SPEC', defaultValue:"**/*.{spec.js,feature,features}", description: "Enter the cypress script path that you want to execute")
