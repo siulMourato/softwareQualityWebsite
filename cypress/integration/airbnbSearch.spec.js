@@ -13,7 +13,7 @@ describe('End-to-End test feature "search"', () => {
         cy.get('.w-12').clear().type("0")
         cy.get('.rdrStaticRangeSelected > .rdrStaticRangeLabel').should('have.text', 'Today')
     })
-
+/*
     it('scenario III - button search shows list of houses to loan', () => {
         cy.get(':nth-child(3) > .text-red-400').click()
         cy.get('.text-3xl').should('have.text', 'Stays in Portugal')
@@ -31,7 +31,7 @@ describe('End-to-End test feature "search"', () => {
             expect(location.pathname).contains('/search');
         });
         cy.url().should('contain', '?location=Portugal')
-    })
+    })*/
 })
 
 
