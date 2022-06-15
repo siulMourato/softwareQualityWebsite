@@ -1,7 +1,7 @@
 pipeline {
       agent any
 
-
+      tools {nodejs "airbnb"}
 
       parameters{
           string(name: 'SPEC', defaultValue:"**/*.{spec.js,feature,features}", description: "Enter the cypress script path that you want to execute")
@@ -44,8 +44,13 @@ pipeline {
                                stage('Performance') {
                                     //    triggers { cron('0 15 * * 1') }
                                    steps {
-                                    sh "/home/luiscmsousa/apache-jmeter-5.4.3/bin/jmeter -n -t /var/lib/jenkins/workspace/airbnb/jmeter/testCase.jmx"
+                                    sh "/home/luiscmsousa/apache-jmeter-5.4.3/bin/jmeter -j jmeter.save.saveservice.output_format=xml -n -t /var/lib/jenkins/workspace/airbnb/jmeter/testCase.jmx -l /var/lib/jenkins/workspace/airbnb/jenkins.io.report.jtl"
                                    }
+                                    post{
+                                            always{
+                                                perfReport '/var/lib/jenkins/workspace/airbnb/*.jtl'
+                                            }
+                                        }
                                }
                             }
             }
@@ -65,7 +70,6 @@ pipeline {
                         sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
                         sh 'npx marge mochawesome-report/mochawesome.json -f report -o mochawesome-report'
                     }
-
                         post {
                             success {
                                 publishHTML (
