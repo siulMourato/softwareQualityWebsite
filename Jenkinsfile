@@ -51,7 +51,6 @@ pipeline {
                                                 perfReport '/var/lib/jenkins/workspace/airbnb/*.jtl'
                                             }
                                         }
-
                                }
                             }
             }
