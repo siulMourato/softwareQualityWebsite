@@ -70,7 +70,6 @@ pipeline {
                         sh 'npx mochawesome-merge cypress/results/*.json -o mochawesome-report/mochawesome.json'
                         sh 'npx marge mochawesome-report/mochawesome.json -f report -o mochawesome-report'
                     }
-
                         post {
                             success {
                                 publishHTML (
