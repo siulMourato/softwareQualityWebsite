@@ -22,7 +22,7 @@ pipeline {
                                                             cleanRemote: false,
                                                             excludes: 'node_modules/',
                                                             execCommand: '''
-                                                            cd ../../airbnb
+                                                            cd airbnb
                                                             npm i
                                                             npm run build
                                                             pm2 restart next''',
@@ -31,7 +31,7 @@ pipeline {
                                                             makeEmptyDirs: false,
                                                             noDefaultExcludes: false,
                                                             patternSeparator: '[, ]+',
-                                                            remoteDirectory: '../../airbnb',
+                                                            remoteDirectory: 'airbnb',
                                                             remoteDirectorySDF: false,
                                                             removePrefix: '',
                                                             sourceFiles: '**/*')],
