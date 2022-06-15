@@ -13,6 +13,9 @@ function Search({ searchResults }) {
   const formattedEndDate = format(new Date(endDate), 'dd MMMM yy');
   const range = `${formattedStartDate} - ${formattedEndDate}`;
 
+  const trimedLocation = () =>
+    location.trimStart().trimEnd().replace(/ /g, '_');
+
   return (
     <div className="h-screen">
       <Header
@@ -42,17 +45,31 @@ function Search({ searchResults }) {
           </div>
           <div className="flex flex-col">
             {searchResults.map(
-              ({ img, location, title, description, star, price, total }) => (
-                <InfoCard
+              (
+                { img, location, title, description, star, price, total },
+                index,
+              ) => (
+                <button
                   key={img}
-                  img={img}
-                  location={location}
-                  title={title}
-                  description={description}
-                  star={star}
-                  price={price}
-                  total={total}
-                />
+                  onClick={() =>
+                    router.push(
+                      `/details/${trimedLocation()}_${img
+                        .split('/')
+                        .pop()}_${index}`,
+                    )
+                  }
+                >
+                  <InfoCard
+                    key={img}
+                    img={img}
+                    location={location}
+                    title={title}
+                    description={description}
+                    star={star}
+                    price={price}
+                    total={total}
+                  />
+                </button>
               ),
             )}
           </div>

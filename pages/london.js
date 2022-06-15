@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import InfoCard from '../components/InfoCard';
-import Map from '../components/Map';
 import Footer from '../components/Footer';
+import { useRouter } from 'next/router';
 
 export async function getServerSideProps() {
   const searchResults = await fetch('https://links.papareact.com/isz').then(
@@ -16,6 +16,8 @@ export async function getServerSideProps() {
 }
 //TODO: just a test 5
 function London({ searchResults }) {
+  const router = useRouter();
+
   return (
     <div className="h-screen">
       <Header />
@@ -36,17 +38,28 @@ function London({ searchResults }) {
           </div>
           <div className="flex flex-col">
             {searchResults.map(
-              ({ img, location, title, description, star, price, total }) => (
-                <InfoCard
+              (
+                { img, location, title, description, star, price, total },
+                index,
+              ) => (
+                <button
                   key={img}
-                  img={img}
-                  location={location}
-                  title={title}
-                  description={description}
-                  star={star}
-                  price={price}
-                  total={total}
-                />
+                  onClick={() =>
+                    router.push(
+                      `/details/london_${img.split('/').pop()}_${index}`,
+                    )
+                  }
+                >
+                  <InfoCard
+                    img={img}
+                    location={location}
+                    title={title}
+                    description={description}
+                    star={star}
+                    price={price}
+                    total={total}
+                  />
+                </button>
               ),
             )}
           </div>
