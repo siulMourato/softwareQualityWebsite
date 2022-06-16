@@ -1,0 +1,193 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 3,
+    "pending": 0,
+    "failures": 2,
+    "start": "2022-06-15T23:45:38.751Z",
+    "end": "2022-06-15T23:45:56.296Z",
+    "duration": 17545,
+    "testsRegistered": 5,
+    "passPercent": 60,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5395382f-950c-4d1e-9599-0b6992fcf3e6",
+      "title": "",
+      "fullFile": "cypress/integration/airbnbSearch.spec.js",
+      "file": "cypress/integration/airbnbSearch.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d6b7dc72-2451-46f0-a7c9-5c2027e375d0",
+          "title": "End-to-End test feature \"search\"",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "scenario I - validate portal was correctly opened",
+              "fullTitle": "End-to-End test feature \"search\" scenario I - validate portal was correctly opened",
+              "timedOut": null,
+              "duration": 4483,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://35.192.209.229/');\ncy.get('.pl-5').type(\"London\");\ncy.log('First page');\ncy.get('.pt-6 > .text-4xl').should('have.text', 'Explore Nearby');",
+              "err": {},
+              "uuid": "9fa8e7f6-dcda-4ccc-9cd9-564eab485730",
+              "parentUUID": "d6b7dc72-2451-46f0-a7c9-5c2027e375d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "scenario II - apply filter",
+              "fullTitle": "End-to-End test feature \"search\" scenario II - apply filter",
+              "timedOut": null,
+              "duration": 621,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.w-12').clear().type(\"0\");\ncy.get('.rdrStaticRangeSelected > .rdrStaticRangeLabel').should('have.text', 'Today');",
+              "err": {},
+              "uuid": "bda1a445-eefb-4341-b48c-04b1a87792bc",
+              "parentUUID": "d6b7dc72-2451-46f0-a7c9-5c2027e375d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "scenario III - button search shows list of houses to loan",
+              "fullTitle": "End-to-End test feature \"search\" scenario III - button search shows list of houses to loan",
+              "timedOut": null,
+              "duration": 3361,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(3) > .text-red-400').click();\ncy.get('.text-3xl').should('have.text', 'Stays in London');",
+              "err": {},
+              "uuid": "c0d6caec-b482-43b6-a2e0-7bc134f7d22f",
+              "parentUUID": "d6b7dc72-2451-46f0-a7c9-5c2027e375d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "scenario IV - number of items displayed should be 7",
+              "fullTitle": "End-to-End test feature \"search\" scenario IV - number of items displayed should be 7",
+              "timedOut": null,
+              "duration": 4486,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex .flex-col').children('.flex>.py-7').should('have.length', 7);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.flex>.py-7`, but never found it. Queried from element: [ <div.flex.flex-col>, 7 more... ]",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.flex>.py-7`, but never found it. Queried from element: [ <div.flex.flex-col>, 7 more... ]\n    at Context.eval (http://35.192.209.229/__cypress/tests?p=cypress/integration/airbnbSearch.spec.js:21:55)",
+                "diff": null
+              },
+              "uuid": "e0c2732d-8492-4823-a068-350f0e159d9e",
+              "parentUUID": "d6b7dc72-2451-46f0-a7c9-5c2027e375d0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "scenario V - The context page should be Lond",
+              "fullTitle": "End-to-End test feature \"search\" scenario V - The context page should be Lond",
+              "timedOut": null,
+              "duration": 4223,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-3xl').should('contain.text', 'London');\ncy.get('.flex .flex-col').children('.flex>.py-7').should('have.length', 7);\ncy.location().should(function (location) {\n  expect(location.pathname).contains('/search');\n});\ncy.url().should('contain', '?location=London');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.flex>.py-7`, but never found it. Queried from element: [ <div.flex.flex-col>, 7 more... ]",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.flex>.py-7`, but never found it. Queried from element: [ <div.flex.flex-col>, 7 more... ]\n    at Context.eval (http://35.192.209.229/__cypress/tests?p=cypress/integration/airbnbSearch.spec.js:25:55)",
+                "diff": null
+              },
+              "uuid": "0ad12b04-ca8a-4bbe-9578-44f51c483d02",
+              "parentUUID": "d6b7dc72-2451-46f0-a7c9-5c2027e375d0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9fa8e7f6-dcda-4ccc-9cd9-564eab485730",
+            "bda1a445-eefb-4341-b48c-04b1a87792bc",
+            "c0d6caec-b482-43b6-a2e0-7bc134f7d22f"
+          ],
+          "failures": [
+            "e0c2732d-8492-4823-a068-350f0e159d9e",
+            "0ad12b04-ca8a-4bbe-9578-44f51c483d02"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 17174,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "video": false,
+        "charts": true,
+        "reportFilename": "[name]-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

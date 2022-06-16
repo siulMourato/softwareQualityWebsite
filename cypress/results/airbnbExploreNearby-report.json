@@ -1,0 +1,189 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-15T23:45:24.654Z",
+    "end": "2022-06-15T23:45:35.134Z",
+    "duration": 10480,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "59dbd861-74e3-4162-88ca-32780b62f1ec",
+      "title": "",
+      "fullFile": "cypress/integration/airbnbExploreNearby.spec.js",
+      "file": "cypress/integration/airbnbExploreNearby.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eeb1fbdd-43ca-4bf2-b460-ce3f0b623411",
+          "title": "End-to-End test feature \"explore nearby\"",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "scenario I - open portal",
+              "fullTitle": "End-to-End test feature \"explore nearby\" scenario I - open portal",
+              "timedOut": null,
+              "duration": 3428,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://35.192.209.229/');\ncy.get('.pt-6 > .text-4xl').should('have.text', 'Explore Nearby');",
+              "err": {},
+              "uuid": "6833f52f-58d6-4a77-8331-35ffd1cb2b99",
+              "parentUUID": "eeb1fbdd-43ca-4bf2-b460-ce3f0b623411",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "scenario II - validate nearby list",
+              "fullTitle": "End-to-End test feature \"explore nearby\" scenario II - validate nearby list",
+              "timedOut": null,
+              "duration": 328,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.pt-6 > .grid > :nth-child(1) > :nth-child(2) > h2').should('have.text', 'London');\ncy.get('.pt-6 > .grid > :nth-child(1)').click().as('londonBtn');",
+              "err": {},
+              "uuid": "0d855187-79d0-4252-aa51-ba50a843ef77",
+              "parentUUID": "eeb1fbdd-43ca-4bf2-b460-ce3f0b623411",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "scenario III - validate if london is in URL",
+              "fullTitle": "End-to-End test feature \"explore nearby\" scenario III - validate if london is in URL",
+              "timedOut": null,
+              "duration": 1295,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.location().should(function (location) {\n  expect(location.pathname).contains('london');\n});",
+              "err": {},
+              "uuid": "5879389e-1825-46a1-b5e9-ec27578ede3f",
+              "parentUUID": "eeb1fbdd-43ca-4bf2-b460-ce3f0b623411",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "scenario IV - validate if list makes sense with filter applied previously",
+              "fullTitle": "End-to-End test feature \"explore nearby\" scenario IV - validate if list makes sense with filter applied previously",
+              "timedOut": null,
+              "duration": 88,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.text-3xl').should('contain.text', 'London');\ncy.get('.pt-14 > :nth-child(4) > :nth-child(1)').should('contain.text', 'London');",
+              "err": {},
+              "uuid": "6e01c478-3e62-4605-b973-1f22ca0f67ac",
+              "parentUUID": "eeb1fbdd-43ca-4bf2-b460-ce3f0b623411",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "scenario V - for each item list should be located in london",
+              "fullTitle": "End-to-End test feature \"explore nearby\" scenario V - for each item list should be located in london",
+              "timedOut": null,
+              "duration": 4312,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.flex .flex-col').children('.flex .justify-between > p').should('contains.text', 'London').should('have.length', 7);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.flex .justify-between > p`, but never found it. Queried from element: [ <div.flex.flex-col>, 7 more... ]",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.flex .justify-between > p`, but never found it. Queried from element: [ <div.flex.flex-col>, 7 more... ]\n    at Context.eval (http://35.192.209.229/__cypress/tests?p=cypress/integration/airbnbExploreNearby.spec.js:24:70)",
+                "diff": null
+              },
+              "uuid": "941f1117-c529-4c4a-b907-37d63b03a424",
+              "parentUUID": "eeb1fbdd-43ca-4bf2-b460-ce3f0b623411",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6833f52f-58d6-4a77-8331-35ffd1cb2b99",
+            "0d855187-79d0-4252-aa51-ba50a843ef77",
+            "5879389e-1825-46a1-b5e9-ec27578ede3f",
+            "6e01c478-3e62-4605-b973-1f22ca0f67ac"
+          ],
+          "failures": [
+            "941f1117-c529-4c4a-b907-37d63b03a424"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9451,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "video": false,
+        "charts": true,
+        "reportFilename": "[name]-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

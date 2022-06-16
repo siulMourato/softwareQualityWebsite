@@ -8,7 +8,7 @@
     "html": false,
     "json": true,
     "video": false,
-    "chart": true,
+    "charts": true,
     "reportFilename": "[name]-report"
   }
 }
