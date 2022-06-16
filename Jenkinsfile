@@ -85,7 +85,7 @@ pipeline {
                         }
                     }
 
-                    stage('Static Analysis') {
+                    stage('SonarQube Scan') {
                         environment{ 
                             SCANNER_HOME = tool 'Sonar-scanner'; 
                         }
