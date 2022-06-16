@@ -27,11 +27,11 @@ describe('End-to-End test feature "search"', () => {
     })
 
     it('scenario IV - Validate last week filter options', () => {
-        cy.get(':nth-child(2) > .rdrStaticRangeLabel').should('have.text', 'Last Week')
+        cy.get(':nth-child(3) > .rdrStaticRangeLabel').should('have.text', 'Last Week')
         
     })
     it('scenario V - Validate this week filter options', () => {
-        cy.get(':nth-child(3) > .rdrStaticRangeLabel').should('have.text', 'This Week')
+        cy.get(':nth-child(4) > .rdrStaticRangeLabel').should('have.text', 'This Week')
         
     })
     it('scenario VI - Validate this month filter options', () => {
@@ -62,7 +62,6 @@ describe('End-to-End test feature "search"', () => {
         cy.get('.rdrDayDisabled > .rdrStartEdge').should('have.length',"1")
         
     })
-
 /*
     var d = new Date(); // Today!
     var aux = d.setDate(d.getDate() - 1); 
