@@ -27,11 +27,9 @@ describe('End-to-End test feature "search"', () => {
     })
 
     it('scenario IV - Validate last week filter options', () => {
-        cy.get(':nth-child(3) > .rdrStaticRangeLabel').should('have.text', 'Last Week')
         
     })
     it('scenario V - Validate this week filter options', () => {
-        cy.get(':nth-child(4) > .rdrStaticRangeLabel').should('have.text', 'This Week')
         
     })
     it('scenario VI - Validate this month filter options', () => {
