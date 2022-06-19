@@ -8,5 +8,10 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require('tailwind-scrollbar-hide')],
+
+  plugins: [require("@tailwindcss/forms")({
+    strategy: 'base', // only generate global styles
+    strategy: 'class', // only generate classes
+  })
+    , require('tailwind-scrollbar-hide')],
 };
