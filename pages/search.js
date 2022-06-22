@@ -50,6 +50,7 @@ function Search({ searchResults }) {
                 index,
               ) => (
                 <button
+                  id={title.replaceAll(" ","_")}
                   key={img}
                   onClick={() =>
                     router.push(

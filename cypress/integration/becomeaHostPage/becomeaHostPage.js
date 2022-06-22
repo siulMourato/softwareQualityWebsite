@@ -1,72 +1,43 @@
 
 
-Given(/^I open the application/, () => {
-    cy.visit('http://35.192.209.229/')
+Given(/^I can open the application/, () => {
+    cy.visit('http://localhost:3000')
 });
- 
+
 Given(/^access to the landing page$/, () => {
     cy.get('h2')
-            .contains('Explore Nearby')
+        .contains('Explore Nearby')
 });
 
-Given(/^I click on become a host option $/, () => {
-    cy.get('h1')
-            .contains('todos')
-    cy.get('.todo-list li').should('have.length', 2)
+Given(/^I click on become a host option$/, () => {
+    cy.get('#becomeHost').click().as('becomehost')
 });
+And(/^I will see the become a host form$/, () => {
+    cy.get('#becomeHost').click().as('becomehost')
+    cy.location().should((location) => {
+        expect(location.pathname).contains('/becomehost');
+    });
+});
+When('I fill hostname as {string} and ShortDescriptionType as {string} and DetailedDescription as {string} and Priceperday as {string} and MemberName as {string} and MemberCity as {string} and MemberZipCode as {string} and Number as {string} and TaxNumber as {string} and EmailAddress as {string}', (HostName, ShortDescriptionType, DetailedDescription, Priceperday, MemberName, MemberCity, MemberZipCode, Number, TaxNumber, EmailAddress) => {
+    cy.get('#HostName').type(HostName)
+    cy.get('#ShortDescriptionType').type(ShortDescriptionType)
+    cy.get('#DetailedDescription').type(DetailedDescription)
+    cy.get('#PricePerDay').type(Priceperday)
+    cy.get('#MemberName').type(MemberName)
+    cy.get('#MemberCity').type(MemberCity)
+    cy.get('#MemberZipCode').type(MemberZipCode)
+    cy.get('#Number').type(Number)
+    cy.get('#TaxNumber').type(TaxNumber)
+    cy.get('#MemberEmailAddress').type(EmailAddress)
+})
+And(/^I click "submit button"$/, () => {
+    cy.get('.shadow').click().as('becomeHost')
+})
+Then(/^I can see that the success creation page$/, () => {
+    //text
+    cy.location().should((location) => {
+        expect(location.pathname).contains('/success');
+    });
 
-Given(/^access to the landing page$/, () => {
-    cy.get('h1')
-            .contains('todos')
-    cy.get('.todo-list li').should('have.length', 2)
-});
-
-When(/^search for houses$/, function (datatable) {
-    var formVals = datatable.rowsHash();
-    // formVals will be a object { "Name" : "Minium", "Home Page" : ... }
-    for (var field in formVals) {
-      var val = formVals[field];
-      var field = $("input, select, textarea").withLabel(field).waitForExistence();
-      if (field.is(":checkbox, :radio")) {
-        if (val === "true") field.click();
-      } else if (field.is("select")) {
-        field.select(val);
-      } else {
-        // fallback, just fill
-        field.fill(val);
-      }
-    }
-});
- 
-Given(/^I see a list off houses$/, () => {
-    cy.get('h1')
-            .contains('todos')
-    cy.get('.todo-list li').should('have.length', 2)
-});
-
-Given(/^I click "([^"]*)" $/, () => {
-    cy.get('.new-todo')
-        .type("\r")
-});
-
-Given(/^Then I can see that the "([^"]*)" $/, () => {
-    cy.get('.new-todo')
-        .type("\r")
-});
-
-Given(/^search for houses i write "([^"]*)" $/, () => {
-    cy.get('.new-todo')
-        .type("\r")
-});
-Given(/^click on search button$/, () => {
-    cy.get('.new-todo')
-        .type("\r")
-});
-Given(/^I can see that the "([^"]*)"$/, () => {
-    cy.get('.new-todo')
-        .type("\r")
-});
-Given(/^All some attributes filled$/, () => {
-    cy.get('.new-todo')
-        .type("\r")
+    cy.get('h1').should('have.text', 'New member added with success')
 });
