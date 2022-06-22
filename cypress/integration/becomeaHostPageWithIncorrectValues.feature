@@ -12,7 +12,6 @@
     And I click "submit button"
     Then I can see the '<ErrorAttribute>' with error '<ExpectedError>'
     And I can see the same page
-
     Examples: 
     | HostName   | ShortDescriptionType                 | DetailedDescription                                        | Priceperday      | MemberName  | MemberCity            | MemberZipCode             | Number    | TaxNumber  | EmailAddress            |  ExpectedError                         | ErrorAttribute        |
     | Host A     | this is a short description host a   | this is a detailed description                             | 320              | Test User   | Leiria                | [blank]                   | 19        | 123456789  | teste1@estg.ipleiria.pt |  Member zip code is required!          | MemberZipCode         |
