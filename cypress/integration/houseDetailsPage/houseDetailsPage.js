@@ -1,5 +1,5 @@
 Given('I can open the application', () => {
-    cy.visit('http://localhost:3000')
+    cy.visit('http://35.192.209.229/')
 });
 
 And('access to the landing page', () => {

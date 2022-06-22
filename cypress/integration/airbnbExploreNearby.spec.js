@@ -2,7 +2,7 @@
 describe('End-to-End test feature "explore nearby"', () => {
   it('scenario I - open portal', () => {
     //http://35.192.209.229/
-    cy.visit('http://localhost:3000')
+    cy.visit('http://35.192.209.229/')
     cy.get('.pt-6 > .text-4xl')
       .should('have.text', 'Explore Nearby')
   })
