@@ -1,7 +1,6 @@
 /// <reference types="Cypress" />
 describe('End-to-End test feature "explore nearby"', () => {
   it('scenario I - open portal', () => {
-    //http://35.192.209.229/
     cy.visit('http://35.192.209.229/')
     cy.get('.pt-6 > .text-4xl')
       .should('have.text', 'Explore Nearby')
@@ -27,8 +26,6 @@ describe('End-to-End test feature "explore nearby"', () => {
   it('scenario V - for each item list should be located in london', () => {
     cy.get('.py-7 > .flex-col > :nth-child(1) > p').should('have.length', 7)
   })
-
-
 
 
 })
