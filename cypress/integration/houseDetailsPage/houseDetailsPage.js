@@ -10,7 +10,7 @@ And('access to the landing page', () => {
 And('search for houses for today', () => {
     cy.get('.w-12').clear().type("0")
     cy.get('.rdrStaticRangeSelected > .rdrStaticRangeLabel').should('have.text', 'Today')
-    cy.get(':nth-child(3) > .text-red-400').click()
+    cy.get(':nth-child(3) > .text-red-400').click({force: true})
 });
 When('I see a list off houses', () => {
     cy.get('.py-7').should('have.length', 7)
@@ -19,7 +19,7 @@ When('I see a list off houses', () => {
 });
 
 And('I select {string} and click', (House) => {
-    cy.get('#' + House).click()
+    cy.get('#' + House).click({force: true})
 
   
 });

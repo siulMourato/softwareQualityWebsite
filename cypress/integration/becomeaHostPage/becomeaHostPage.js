@@ -10,10 +10,10 @@ Given(/^access to the landing page$/, () => {
 });
 
 Given(/^I click on become a host option$/, () => {
-    cy.get('#becomeHost').click().as('becomehost')
+    cy.get('#becomeHost').click({force: true}).as('becomehost')
 });
 And(/^I will see the become a host form$/, () => {
-    cy.get('#becomeHost').click().as('becomehost')
+    cy.get('#becomeHost').click({force: true}).as('becomehost')
     cy.location().should((location) => {
         expect(location.pathname).contains('/becomehost');
     });
@@ -75,7 +75,7 @@ And('I fill email address as {string}', (EmailAddress) => {
 })
 
 And(/^I click "submit button"$/, () => {
-    cy.get('.shadow').click().as('becomeHost')
+    cy.get('.shadow').click({force: true}).as('becomeHost')
 })
 Then(/^I can see that the success creation page$/, () => {
     //text
