@@ -39,6 +39,8 @@ When('I fill hostname as {string} and ShortDescriptionType as {string} and Detai
         cy.get('#' + ErrorAttribute).clear() /*to clean attribute that we want to force error*/
     }
 })
+
+
 And(/^I click "submit button"$/, () => {
     cy.get('.shadow').click().as('becomeHost')
 })

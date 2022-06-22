@@ -18,7 +18,8 @@ And(/^I will see the become a host form$/, () => {
         expect(location.pathname).contains('/becomehost');
     });
 });
-When('I fill hostname as {string} and ShortDescriptionType as {string} and DetailedDescription as {string} and Priceperday as {string} and MemberName as {string} and MemberCity as {string} and MemberZipCode as {string} and Number as {string} and TaxNumber as {string} and EmailAddress as {string}', (HostName, ShortDescriptionType, DetailedDescription, Priceperday, MemberName, MemberCity, MemberZipCode, Number, TaxNumber, EmailAddress) => {
+//oldest source
+/*When('I fill hostname as {string} and ShortDescriptionType as {string} and DetailedDescription as {string} and Priceperday as {string} and MemberName as {string} and MemberCity as {string} and MemberZipCode as {string} and Number as {string} and TaxNumber as {string} and EmailAddress as {string}', (HostName, ShortDescriptionType, DetailedDescription, Priceperday, MemberName, MemberCity, MemberZipCode, Number, TaxNumber, EmailAddress) => {
     cy.get('#HostName').type(HostName)
     cy.get('#ShortDescriptionType').type(ShortDescriptionType)
     cy.get('#DetailedDescription').type(DetailedDescription)
@@ -29,7 +30,50 @@ When('I fill hostname as {string} and ShortDescriptionType as {string} and Detai
     cy.get('#Number').type(Number)
     cy.get('#TaxNumber').type(TaxNumber)
     cy.get('#MemberEmailAddress').type(EmailAddress)
+})*/
+
+
+When('I fill hostname as {string}', (HostName) => {
+    cy.get('#HostName').type(HostName);
 })
+
+And('I fill short description type as {string}', (ShortDescriptionType) => {
+    cy.get('#ShortDescriptionType').type(ShortDescriptionType);
+})
+
+
+And('I fill detailed description as {string}', (DetailedDescription) => {
+    cy.get('#DetailedDescription').type(DetailedDescription);
+})
+
+And('I fill priceperday as {string}', (Priceperday) => {
+    cy.get('#PricePerDay').type(Priceperday);
+})
+
+And('I fill member city as {string}', (MemberCity) => {
+    cy.get('#MemberCity').type(MemberCity);
+})
+
+And('I fill member name as {string}', (MemberName) => {
+    cy.get('#MemberName').type(MemberName);
+})
+
+And('I fill member zipcode as {string}', (MemberZipCode) => {
+    cy.get('#MemberZipCode').type(MemberZipCode);
+})
+
+And('I fill number as {string}', (Number) => {
+    cy.get('#Number').type(Number);
+})
+
+And('I fill tax number as {string}', (TaxNumber) => {
+    cy.get('#TaxNumber').type(TaxNumber);
+})
+
+And('I fill email address as {string}', (EmailAddress) => {
+    cy.get('#MemberEmailAddress').type(EmailAddress);
+})
+
 And(/^I click "submit button"$/, () => {
     cy.get('.shadow').click().as('becomeHost')
 })
