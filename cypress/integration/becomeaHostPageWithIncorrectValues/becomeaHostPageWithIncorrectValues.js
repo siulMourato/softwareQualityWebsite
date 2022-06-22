@@ -10,12 +10,12 @@ Given(/^access to the landing page$/, () => {
 });
 
 Given(/^I click on become a host option$/, () => {
-    cy.get('#becomeHost').click().as('becomehost');
+    cy.get('#becomeHost').click({force: true}).as('becomehost');
     
 });
 
 And(/^I will see the become a host form$/, () => {
-    cy.get('#becomeHost').click().as('becomeHost')
+    cy.get('#becomeHost').click({force: true}).as('becomeHost')
     cy.location().should((location) => {
         expect(location.pathname).contains('/becomehost');
     });
@@ -42,7 +42,7 @@ When('I fill hostname as {string} and ShortDescriptionType as {string} and Detai
 
 
 And(/^I click "submit button"$/, () => {
-    cy.get('.shadow').click().as('becomeHost')
+    cy.get('.shadow').click({force: true}).as('becomeHost')
 })
 
 Then('I can see the {string} with error {string}', (ErrorAttribute, ExpectedError) => {

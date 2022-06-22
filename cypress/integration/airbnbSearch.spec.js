@@ -60,19 +60,32 @@ describe('End-to-End test feature "search"', () => {
         cy.get('.rdrDayDisabled > .rdrStartEdge').should('have.length',"1")
         
     })
-/*
-    var d = new Date(); // Today!
-    var aux = d.setDate(d.getDate() - 1); 
-    cy.get('.py-7').should('have.length', 7)    
-  */
+    it('scenario VIII - Validate number of guests filter options', () => {
+        cy.get(':nth-child(2) > .rdrInputRangeInput').clear()
+        cy.get(':nth-child(2) > .rdrInputRangeInput').type(18)
+        cy.get(':nth-child(2) > .rdrStaticRangeLabel').should('have.text', 'Yesterday')
+        cy.get(':nth-child(2) > .rdrStaticRangeLabel') 
+        cy.get(':nth-child(2) > .rdrStaticRangeLabel').click()
+        cy.get('.rdrDayDisabled > .rdrStartEdge').should('have.length',"1")
+        
+    })
+    it('scenario IX - Validate number of guests filter options', () => {
+        cy.get(':nth-child(2) > .rdrInputRangeInput').clear()
+        cy.get(':nth-child(2) > .rdrInputRangeInput').type(18)
+        cy.get(':nth-child(2) > .rdrStaticRangeLabel').should('have.text', 'Today')
+        cy.get(':nth-child(2) > .rdrStaticRangeLabel') 
+        cy.get(':nth-child(2) > .rdrStaticRangeLabel').click()
+        cy.get('.rdrDayDisabled > .rdrStartEdge').should('have.length',"1")
+        
+    })
     
-    it('scenario IX - button search shows list of houses to loan', () => {
+    it('scenario X - button search shows list of houses to loan', () => {
         cy.get(':nth-child(3) > .text-red-400').click()
         cy.get('.text-3xl').should('have.text', 'Stays in London')
     })
 
 
-    it('scenario X - number of items displayed should be 7', () => {
+    it('scenario XI - number of items displayed should be 7', () => {
         cy.get('.py-7').should('have.length', 7)
         cy.get('.py-7 > .flex-col > .items-end > div > .text-lg').should('have.length',7)
         cy.get('.py-7 > .relative > span > .rounded-2xl').should('have.attr','src')
