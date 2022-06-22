@@ -52,3 +52,6 @@ cypress/integration/_generated/*
 cypress/data/migration/generated/*.csv
 cypress/fixtures/example.json
 cypress/build/*
+
+Dockerfile
+docker-compose.yml

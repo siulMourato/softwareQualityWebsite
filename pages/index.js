@@ -10,7 +10,7 @@ export default function Home({ exploreData, cardsData }) {
   return (
     <div className="">
       <Head>
-        <title>Michele's Airbnb</title>
+        <title>Software Quality Airbnb</title>
         <link rel="icon" href="/favicon.ico" />
         <script src="path/to/dist/feather.js"></script>
       </Head>
