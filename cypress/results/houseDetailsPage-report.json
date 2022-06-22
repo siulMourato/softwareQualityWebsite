@@ -1,0 +1,158 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 0,
+    "pending": 0,
+    "failures": 3,
+    "start": "2022-06-22T20:54:50.700Z",
+    "end": "2022-06-22T20:55:11.476Z",
+    "duration": 20776,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "86de980d-a3b4-495d-a1aa-f99be17f9541",
+      "title": "",
+      "fullFile": "cypress/integration/houseDetailsPage.feature",
+      "file": "cypress/integration/houseDetailsPage.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6fd2bba9-b3bf-46e1-97e0-3528fbecb8f7",
+          "title": "Show house details page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Show the selected house details (example #1)",
+              "fullTitle": "Show house details page Show the selected house details (example #1)",
+              "timedOut": null,
+              "duration": 8449,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h4.text-xl>' to have text 'London_Studio_Apartments', but the text was 'London Studio Apartments'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h4.text-xl>' to have text 'London_Studio_Apartments', but the text was 'London Studio Apartments'\n    at Context.eval (http://35.192.209.229/__cypress/tests?p=cypress/integration/houseDetailsPage.feature:63:22)\n    at Context.resolveAndRunStepDefinition (http://35.192.209.229/__cypress/tests?p=cypress/integration/houseDetailsPage.feature:13781:29)\n    at Context.eval (http://35.192.209.229/__cypress/tests?p=cypress/integration/houseDetailsPage.feature:13102:35)",
+                "diff": "- 'London Studio Apartments'\n+ 'London_Studio_Apartments'\n"
+              },
+              "uuid": "2c41a521-d2f4-41f1-9e40-acae4b51e436",
+              "parentUUID": "6fd2bba9-b3bf-46e1-97e0-3528fbecb8f7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Show the selected house details (example #2)",
+              "fullTitle": "Show house details page Show the selected house details (example #2)",
+              "timedOut": null,
+              "duration": 6060,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h4.text-xl>' to have text 'Independant_luxury_studio_apartment', but the text was 'Independant luxury studio apartment'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h4.text-xl>' to have text 'Independant_luxury_studio_apartment', but the text was 'Independant luxury studio apartment'\n    at Context.eval (http://35.192.209.229/__cypress/tests?p=cypress/integration/houseDetailsPage.feature:63:22)\n    at Context.resolveAndRunStepDefinition (http://35.192.209.229/__cypress/tests?p=cypress/integration/houseDetailsPage.feature:13781:29)\n    at Context.eval (http://35.192.209.229/__cypress/tests?p=cypress/integration/houseDetailsPage.feature:13102:35)",
+                "diff": "- 'Independant luxury studio apartment'\n+ 'Independant_luxury_studio_apartment'\n"
+              },
+              "uuid": "8bf58cb2-59d4-45b3-bd50-76a402701bdf",
+              "parentUUID": "6fd2bba9-b3bf-46e1-97e0-3528fbecb8f7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Show the selected house details (example #3)",
+              "fullTitle": "Show house details page Show the selected house details (example #3)",
+              "timedOut": null,
+              "duration": 6107,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<h4.text-xl>' to have text 'Spacious_Peaceful_Modern_Bedroom', but the text was 'Spacious Peaceful Modern Bedroom'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<h4.text-xl>' to have text 'Spacious_Peaceful_Modern_Bedroom', but the text was 'Spacious Peaceful Modern Bedroom'\n    at Context.eval (http://35.192.209.229/__cypress/tests?p=cypress/integration/houseDetailsPage.feature:63:22)\n    at Context.resolveAndRunStepDefinition (http://35.192.209.229/__cypress/tests?p=cypress/integration/houseDetailsPage.feature:13781:29)\n    at Context.eval (http://35.192.209.229/__cypress/tests?p=cypress/integration/houseDetailsPage.feature:13102:35)",
+                "diff": "- 'Spacious Peaceful Modern Bedroom'\n+ 'Spacious_Peaceful_Modern_Bedroom'\n"
+              },
+              "uuid": "71fcf2fe-110f-4100-ad69-0460e32d6cd6",
+              "parentUUID": "6fd2bba9-b3bf-46e1-97e0-3528fbecb8f7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "2c41a521-d2f4-41f1-9e40-acae4b51e436",
+            "8bf58cb2-59d4-45b3-bd50-76a402701bdf",
+            "71fcf2fe-110f-4100-ad69-0460e32d6cd6"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 20616,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "video": false,
+        "charts": true,
+        "reportFilename": "[name]-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,203 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-22T20:52:59.712Z",
+    "end": "2022-06-22T20:53:22.548Z",
+    "duration": 22836,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "adb35ab2-02ae-4a5a-9eb7-a616abb6d9be",
+      "title": "",
+      "fullFile": "cypress/integration/becomeaHostPage.feature",
+      "file": "cypress/integration/becomeaHostPage.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a2a10ab8-e88f-4a94-bbf4-250dfee34ca4",
+          "title": "Become a host webpage",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Fill become a host webpage with correct values",
+              "fullTitle": "Become a host webpage Fill become a host webpage with correct values",
+              "timedOut": null,
+              "duration": 1260,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "4249bed7-6b3f-4440-953c-d3b3d09e855f",
+              "parentUUID": "a2a10ab8-e88f-4a94-bbf4-250dfee34ca4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fill become a host webpage with correct values (example #1)",
+              "fullTitle": "Become a host webpage Fill become a host webpage with correct values (example #1)",
+              "timedOut": null,
+              "duration": 4244,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "9cc893fc-96d5-4941-871f-19310c5f41a5",
+              "parentUUID": "a2a10ab8-e88f-4a94-bbf4-250dfee34ca4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fill become a host webpage with correct values (example #2)",
+              "fullTitle": "Become a host webpage Fill become a host webpage with correct values (example #2)",
+              "timedOut": null,
+              "duration": 3957,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "85420e2b-56e9-4a9f-90c1-13d0e2a3c2d0",
+              "parentUUID": "a2a10ab8-e88f-4a94-bbf4-250dfee34ca4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fill become a host webpage with correct values (example #3)",
+              "fullTitle": "Become a host webpage Fill become a host webpage with correct values (example #3)",
+              "timedOut": null,
+              "duration": 3935,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "a09478a1-bfbf-48dc-a408-3f05a7916074",
+              "parentUUID": "a2a10ab8-e88f-4a94-bbf4-250dfee34ca4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fill become a host webpage with correct values (example #4)",
+              "fullTitle": "Become a host webpage Fill become a host webpage with correct values (example #4)",
+              "timedOut": null,
+              "duration": 4027,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "923861f1-e86e-43b2-803f-90b65e2407ca",
+              "parentUUID": "a2a10ab8-e88f-4a94-bbf4-250dfee34ca4",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fill become a host webpage with correct values (example #5)",
+              "fullTitle": "Become a host webpage Fill become a host webpage with correct values (example #5)",
+              "timedOut": null,
+              "duration": 5179,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const state = window.testState;\nreturn cy\n  .then(() => state.onStartScenario(scenario, indexedSteps))\n  .then(() =>\n    resolveAndRunBeforeHooks.call(this, scenario.tags, state.feature.name)\n  )\n  .then(() =>\n    indexedSteps.forEach((step) =>\n      stepTest.call(this, state, step, rowData)\n    )\n  )\n  .then(() => state.onFinishScenario(scenario));",
+              "err": {},
+              "uuid": "36500832-85fa-49ea-adc4-2013b81eb164",
+              "parentUUID": "a2a10ab8-e88f-4a94-bbf4-250dfee34ca4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4249bed7-6b3f-4440-953c-d3b3d09e855f",
+            "9cc893fc-96d5-4941-871f-19310c5f41a5",
+            "85420e2b-56e9-4a9f-90c1-13d0e2a3c2d0",
+            "a09478a1-bfbf-48dc-a408-3f05a7916074",
+            "923861f1-e86e-43b2-803f-90b65e2407ca",
+            "36500832-85fa-49ea-adc4-2013b81eb164"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 22602,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "video": false,
+        "charts": true,
+        "reportFilename": "[name]-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
