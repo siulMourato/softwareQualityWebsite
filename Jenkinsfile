@@ -8,7 +8,6 @@ pipeline {
           choice(name: 'BROWSER', choices:['electron'], description: "Select the browser to be used in your cypress tests")
       }
       stages {
-
             stage('Deploy and performance'){
                 parallel {
                                 stage('Build/Deploy app to staging') {
@@ -109,11 +108,35 @@ pipeline {
 
            stage('Release to production') {
                steps {
-
-               // similar procedure as in the 'Build/ Deploy to staging' stage, suppressed here for cost saving purposes
-                   echo "Deploying app in production environment"
-              }
-           }
+                sshPublisher(
+                    publishers: [
+                        sshPublisherDesc(
+                        configName: 'production',
+                        transfers: [
+                            sshTransfer(
+                                cleanRemote: false,
+                                excludes: 'node_modules/',
+                                execCommand: '''
+                                cd airbnb
+                                npm i
+                                npm run build
+                                pm2 restart next''',
+                                execTimeout: 1200000,
+                                flatten: false,
+                                makeEmptyDirs: false,
+                                noDefaultExcludes: false,
+                                patternSeparator: '[, ]+',
+                                remoteDirectory: 'airbnb',
+                                remoteDirectorySDF: false,
+                                removePrefix: '',
+                                sourceFiles: '**/*')],
+                            usePromotionTimestamp: false,
+                            useWorkspaceInPromotion: false,
+                            verbose: true)
+                        ]
+                    )
+                }
+            }
         }
 
 }
