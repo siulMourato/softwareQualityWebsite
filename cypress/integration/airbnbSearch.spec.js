@@ -109,7 +109,6 @@ describe('End-to-End test feature "search"', () => {
 
     it('scenario XIV - The context page should be London', () => {
         cy.get('.text-3xl').should('contain.text', 'London')
-
         cy.get(':nth-child(1) > .py-7 > .flex-col > :nth-child(1) > p').should('have.length', 1)
         cy.location().should((location) => {
             expect(location.pathname).contains('/search');
@@ -117,22 +116,9 @@ describe('End-to-End test feature "search"', () => {
         cy.url().should('contain', '?location=London')
     })
 
-    it('scenario XV - Validate each one of house item', () => {
-                
-    })
-
-    it('scenario XVI - Validate each one of house item', () => {
-             
-    })
-
-    it('scenario XVII - Validate each one of house item', () => {
-             
-    })
-    it('scenario XVIII - Validate each one of house item', () => {
-          
-    })
-    it('scenario XIX - Validate each one of house item', () => {
-          
+    it('scenario XV - Check first element is placed in london', () => {
+        cy.get('#Stay_at_this_spacious_Edwardian_House > .py-7 > .flex-col > :nth-child(1) > p').should('contain.text', 'London')
+        cy.get(':nth-child(1) > .py-7 > .flex-col > :nth-child(1) > p').should('have.length', 1)
     })
 
 })

@@ -8,53 +8,48 @@ pipeline {
           choice(name: 'BROWSER', choices:['electron'], description: "Select the browser to be used in your cypress tests")
       }
       stages {
-            stage('Deploy and performance'){
-                parallel {
-                                stage('Build/Deploy app to staging') {
-                                    steps {
-                                        sshPublisher(
-                                            publishers: [
-                                                sshPublisherDesc(
-                                                    configName: 'staging',
-                                                    transfers: [
-                                                        sshTransfer(
-                                                            cleanRemote: false,
-                                                            excludes: 'node_modules/',
-                                                            execCommand: '''
-                                                            cd airbnb
-                                                            npm i
-                                                            npm run build
-                                                            pm2 restart next''',
-                                                            execTimeout: 1200000,
-                                                            flatten: false,
-                                                            makeEmptyDirs: false,
-                                                            noDefaultExcludes: false,
-                                                            patternSeparator: '[, ]+',
-                                                            remoteDirectory: 'airbnb',
-                                                            remoteDirectorySDF: false,
-                                                            removePrefix: '',
-                                                            sourceFiles: '**/*')],
-                                                usePromotionTimestamp: false,
-                                                useWorkspaceInPromotion: false,
-                                                verbose: true)])
-                                    }
-                               }
-
-                               stage('Performance') {
-                                    //    triggers { cron('0 15 * * 1') }
-                                   steps {
-                                    sh "/home/luiscmsousa/apache-jmeter-5.4.3/bin/jmeter -j jmeter.save.saveservice.output_format=xml -n -t /var/lib/jenkins/workspace/airbnb/jmeter/testCase.jmx -l /var/lib/jenkins/workspace/airbnb/jenkins.io.report.jtl"
-                                   }
-                                    post{
-                                            always{
-                                                perfReport '/var/lib/jenkins/workspace/airbnb/*.jtl'
-                                            }
-                                        }
-                               }
-                            }
+           
+        stage('Build/Deploy app to staging') {
+            steps {
+                sshPublisher(
+                    publishers: [
+                        sshPublisherDesc(
+                            configName: 'staging',
+                            transfers: [
+                                sshTransfer(
+                                    cleanRemote: false,
+                                    excludes: 'node_modules/',
+                                    execCommand: '''
+                                    cd airbnb
+                                    npm i
+                                    npm run build
+                                    pm2 restart next''',
+                                    execTimeout: 1200000,
+                                    flatten: false,
+                                    makeEmptyDirs: false,
+                                    noDefaultExcludes: false,
+                                    patternSeparator: '[, ]+',
+                                    remoteDirectory: 'airbnb',
+                                    remoteDirectorySDF: false,
+                                    removePrefix: '',
+                                    sourceFiles: '**/*')],
+                        usePromotionTimestamp: false,
+                        useWorkspaceInPromotion: false,
+                        verbose: true)])
             }
+       }
 
-
+       stage('Performance') {
+            //    triggers { cron('0 15 * * 1') }
+           steps {
+            sh "/home/luiscmsousa/apache-jmeter-5.4.3/bin/jmeter -j jmeter.save.saveservice.output_format=xml -n -t /var/lib/jenkins/workspace/airbnb/jmeter/testCase.jmx -l /var/lib/jenkins/workspace/airbnb/jenkins.io.report.jtl"
+           }
+            post{
+                    always{
+                        perfReport '/var/lib/jenkins/workspace/airbnb/*.jtl'
+                    }
+                }
+         }
 
         stage('Run Tests') {
             parallel {
